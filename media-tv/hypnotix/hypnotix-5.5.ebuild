@@ -1,9 +1,11 @@
-# Maintainer: Luna Jernberg <droidbittin@gmail.com>
+# Copyright 2025 Gentoo Authors
 EAPI=8
-PYTHON_COMPAT=( python3_12 python3_13 )
 
-DESCRIPTION="An IPTV streaming application with support for live TV, movies and series."
+
+DESCRIPTION="An IPTV streaming application with support for live TV, movies and series"
 HOMEPAGE="https://github.com/linuxmint/hypnotix"
+SRC_URI="https://github.com/linuxmint/hypnotix/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+
 LICENSE="GPL-3.0-or-later"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -11,42 +13,48 @@ IUSE=""
 
 # Dependencies
 DEPEND="
-    media-icons/circle-flags-svg
-    x11-misc/dconf
+    media-tv/circle-flags-svg
     x11-themes/hicolor-icon-theme
     media-video/mpv
-    dev-python/pycairo[${PYTHON_USEDEP}]
-    dev-python/pygobject[${PYTHON_USEDEP}]
-    dev-python/python-cinemagoer[${PYTHON_USEDEP}]
-    dev-python/requests[${PYTHON_USEDEP}]
-    dev-python/setproctitle[${PYTHON_USEDEP}]
-    dev-python/unidecode[${PYTHON_USEDEP}]
+    dev-python/pycairo
+    dev-python/pygobject
+    dev-python/python-cinemagoer
+    dev-python/requests
+    dev-python/setproctitle
+    dev-python/unidecode
     x11-misc/xapp
+    x11-misc/xapp-symbolic-icons
     media-video/yt-dlp
-    x11-themes/xapp-symbolic-icons
 "
-
 RDEPEND="${DEPEND}"
 
-SRC_URI="https://github.com/linuxmint/hypnotix/archive/refs/tags/5.5.tar.gz -> ${PN}-${PV}.tar.gz"
-SRC_URI_SHA256="3de9ced106fd9301b7071422b43b50ace3f830ce57244796e44e0f8466384d2e"
-
-S="${WORKDIR}/${PN}-${PV}"
+# Use Python 3.11+
+PYTHON_COMPAT=(python3_11 python3_12)
 
 src_prepare() {
     default
-    # Patch About dialog version
-    sed -i "s/__DEB_VERSION__/${PV}/g" "${S}/usr/lib/${PN}/${PN}.py"
-    # Fix license path if needed
-    sed -i 's|common-licenses/GPL|licenses/common/GPL/license.txt|g' "${S}/usr/lib/${PN}/${PN}.py"
-}
 
-src_compile() {
-    cd "${S}"
-    make
+    # Set version in About dialog
+    sed -i "s/__DEB_VERSION__/${PV}/g" "usr/lib/hypnotix/hypnotix.py"
+
+    # Fix license path
+    sed -i 's|common-licenses/GPL|licenses/common/GPL/license.txt|g' "usr/lib/hypnotix/hypnotix.py"
 }
 
 src_install() {
-    cd "${S}"
-    cp -r usr/ "${ED}/"
+    dobin usr/bin/hypnotix
+    insinto /usr/lib/hypnotix
+    doins usr/lib/hypnotix/*.py
+
+    # Install schemas
+    insinto /usr/share/glib-2.0/schemas
+    doins usr/share/glib-2.0/schemas/*.gschema.xml
+
+    # Install desktop file
+    insinto /usr/share/applications
+    doins usr/share/applications/hypnotix.desktop
+
+    # Install icons and assets
+    insinto /usr/share/hypnotix
+    doins -r usr/share/hypnotix/*
 }
