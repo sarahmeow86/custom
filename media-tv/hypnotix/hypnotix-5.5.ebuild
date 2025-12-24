@@ -29,8 +29,7 @@ DEPEND="
         dev-python/unidecode[${PYTHON_USEDEP}]
     ')
     dev-python/cinemagoer[${PYTHON_SINGLE_USEDEP}]
-    x11-misc/xapp
-    x11-misc/xapp-symbolic-icons
+    x11-libs/xapp
     net-misc/yt-dlp
 "
 RDEPEND="${DEPEND}"
@@ -47,12 +46,13 @@ src_prepare() {
 }
 
 src_install() {
-    python_fix_shebang usr/bin/hypnotix
     dobin usr/bin/hypnotix
     
     insinto /usr/lib/hypnotix
     doins usr/lib/hypnotix/*.py
-    python_optimize /usr/lib/hypnotix
+    python_fix_shebang "${ED}"/usr/lib/hypnotix/hypnotix.py
+    fperms +x /usr/lib/hypnotix/hypnotix.py
+    python_optimize "${ED}"/usr/lib/hypnotix
 
     # Install schemas
     insinto /usr/share/glib-2.0/schemas
