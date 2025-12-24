@@ -1,66 +1,52 @@
-EAPI=8
+# Maintainer: Luna Jernberg <droidbittin@gmail.com>
+EAPI=9
+PYTHON_COMPAT=( python3_12 python3_13 )
 
-PYTHON_COMPAT=( python3_{11,12} )
-
-inherit python-r1 gnome2-utils xdg
-
-DESCRIPTION="IPTV streaming application with support for live TV, movies and series"
+DESCRIPTION="An IPTV streaming application with support for live TV, movies and series."
 HOMEPAGE="https://github.com/linuxmint/hypnotix"
-SRC_URI="https://github.com/linuxmint/hypnotix/archive/refs/tags/${PV}.tar.gz"
-
-LICENSE="GPL-3"
+LICENSE="GPL-3.0-or-later"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="
-    ${PYTHON_DEPS}
-    media-gfx/circle-flags-svg>=2.7.0
-    gnome-base/dconf
+# Dependencies
+DEPEND="
+    media-icons/circle-flags-svg
+    x11-misc/dconf
     x11-themes/hicolor-icon-theme
     media-video/mpv
-    dev-python/pycairo
-    dev-python/pygobject
-    dev-python/cinemagoer
-    dev-python/requests
-    dev-python/setproctitle
-    dev-python/unidecode
-    x11-libs/xapp
+    dev-python/pycairo[${PYTHON_USEDEP}]
+    dev-python/pygobject[${PYTHON_USEDEP}]
+    dev-python/python-cinemagoer[${PYTHON_USEDEP}]
+    dev-python/requests[${PYTHON_USEDEP}]
+    dev-python/setproctitle[${PYTHON_USEDEP}]
+    dev-python/unidecode[${PYTHON_USEDEP}]
+    x11-misc/xapp
+    media-video/yt-dlp
     x11-themes/xapp-symbolic-icons
-    net-misc/yt-dlp
 "
 
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
+
+SRC_URI="https://github.com/linuxmint/hypnotix/archive/refs/tags/5.5.tar.gz -> ${PN}-${PV}.tar.gz"
+SRC_URI_SHA256="8eb7991ceeab93096c8a8c9850b2fd920511b52ad13330b1a25fd8488b6fd71f"
+
+S="${WORKDIR}/${PN}-${PV}"
 
 src_prepare() {
     default
-
-    # Set version in About dialog
-    sed -i \
-        "s/__DEB_VERSION__/${PV}/g" \
-        usr/lib/hypnotix/hypnotix.py || die
-
-    # Fix license path (matches Arch fix)
-    sed -i \
-        's|common-licenses/GPL|licenses/common/GPL/license.txt|g' \
-        usr/lib/hypnotix/hypnotix.py || die
+    # Patch About dialog version
+    sed -i "s/__DEB_VERSION__/${PV}/g" "${S}/usr/lib/${PN}/${PN}.py"
+    # Fix license path if needed
+    sed -i 's|common-licenses/GPL|licenses/common/GPL/license.txt|g' "${S}/usr/lib/${PN}/${PN}.py"
 }
 
 src_compile() {
-    emake
+    cd "${S}"
+    make
 }
 
 src_install() {
-    insinto /
-    doins -r usr
-}
-
-pkg_postinst() {
-    gnome2_schemas_update
-    xdg_pkg_postinst
-}
-
-pkg_postrm() {
-    gnome2_schemas_update
-    xdg_pkg_postrm
+    cd "${S}"
+    cp -r usr/ "${ED}/"
 }
