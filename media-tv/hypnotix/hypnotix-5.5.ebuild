@@ -1,5 +1,5 @@
 # Maintainer: Luna Jernberg <droidbittin@gmail.com>
-EAPI=9
+EAPI=8
 PYTHON_COMPAT=( python3_12 python3_13 )
 
 DESCRIPTION="An IPTV streaming application with support for live TV, movies and series."
