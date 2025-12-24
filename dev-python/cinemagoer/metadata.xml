@@ -6,10 +6,11 @@
         <name>Sarah</name>
     </maintainer>
     <longdescription>
-        Hypnotix is an IPTV streaming application with support for live TV, movies and series.
-        It can play streams from IPTV providers that use the Xtream API or M3U URLs.
+        Cinemagoer (previously known as IMDbPY) is a Python package for retrieving and managing 
+        the data of the IMDb movie database about movies, people, characters and companies.
     </longdescription>
     <upstream>
-        <remote-id type="github">linuxmint/hypnotix</remote-id>
+        <remote-id type="github">cinemagoer/cinemagoer</remote-id>
+        <remote-id type="pypi">cinemagoer</remote-id>
     </upstream>
 </pkgmetadata>

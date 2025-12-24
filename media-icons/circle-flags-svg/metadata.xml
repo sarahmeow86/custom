@@ -6,10 +6,10 @@
         <name>Sarah</name>
     </maintainer>
     <longdescription>
-        Hypnotix is an IPTV streaming application with support for live TV, movies and series.
-        It can play streams from IPTV providers that use the Xtream API or M3U URLs.
+        A collection of 400+ circular SVG country and language flags.
+        Part of the Linux Mint project, used by Hypnotix and other applications.
     </longdescription>
     <upstream>
-        <remote-id type="github">linuxmint/hypnotix</remote-id>
+        <remote-id type="github">linuxmint/circle-flags</remote-id>
     </upstream>
 </pkgmetadata>

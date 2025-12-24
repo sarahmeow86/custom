@@ -1,6 +1,9 @@
 # Copyright 2025 Gentoo Authors
 EAPI=8
 
+PYTHON_COMPAT=( python3_{11..13} )
+
+inherit python-single-r1 xdg-utils gnome2-utils
 
 DESCRIPTION="An IPTV streaming application with support for live TV, movies and series"
 HOMEPAGE="https://github.com/linuxmint/hypnotix"
@@ -10,26 +13,28 @@ LICENSE="GPL-3.0-or-later"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # Dependencies
 DEPEND="
-    media-tv/circle-flags-svg
+    ${PYTHON_DEPS}
+    media-icons/circle-flags-svg
     x11-themes/hicolor-icon-theme
-    media-video/mpv
-    dev-python/pycairo
-    dev-python/pygobject
-    dev-python/python-cinemagoer
-    dev-python/requests
-    dev-python/setproctitle
-    dev-python/unidecode
+    media-video/mpv[libmpv]
+    $(python_gen_cond_dep '
+        dev-python/pycairo[${PYTHON_USEDEP}]
+        dev-python/pygobject[${PYTHON_USEDEP}]
+        dev-python/requests[${PYTHON_USEDEP}]
+        dev-python/setproctitle[${PYTHON_USEDEP}]
+        dev-python/unidecode[${PYTHON_USEDEP}]
+    ')
+    dev-python/cinemagoer[${PYTHON_SINGLE_USEDEP}]
     x11-misc/xapp
     x11-misc/xapp-symbolic-icons
     media-video/yt-dlp
 "
 RDEPEND="${DEPEND}"
-
-# Use Python 3.11+
-PYTHON_COMPAT=(python3_11 python3_12)
+BDEPEND="${PYTHON_DEPS}"
 
 src_prepare() {
     default
@@ -42,9 +47,12 @@ src_prepare() {
 }
 
 src_install() {
+    python_fix_shebang usr/bin/hypnotix
     dobin usr/bin/hypnotix
+    
     insinto /usr/lib/hypnotix
     doins usr/lib/hypnotix/*.py
+    python_optimize /usr/lib/hypnotix
 
     # Install schemas
     insinto /usr/share/glib-2.0/schemas
@@ -57,4 +65,17 @@ src_install() {
     # Install icons and assets
     insinto /usr/share/hypnotix
     doins -r usr/share/hypnotix/*
+    
+    # Compile GSettings schemas
+    insinto /usr/share/glib-2.0/schemas
+}
+
+pkg_postinst() {
+    xdg_icon_cache_update
+    gnome2_schemas_update
+}
+
+pkg_postrm() {
+    xdg_icon_cache_update
+    gnome2_schemas_update
 }
