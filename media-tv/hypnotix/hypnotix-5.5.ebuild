@@ -29,7 +29,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 SRC_URI="https://github.com/linuxmint/hypnotix/archive/refs/tags/5.5.tar.gz -> ${PN}-${PV}.tar.gz"
-SRC_URI_SHA256="8eb7991ceeab93096c8a8c9850b2fd920511b52ad13330b1a25fd8488b6fd71f"
+SRC_URI_SHA256="3de9ced106fd9301b7071422b43b50ace3f830ce57244796e44e0f8466384d2e"
 
 S="${WORKDIR}/${PN}-${PV}"
 
