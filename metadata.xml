@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<metadata>
+    <maintainers>
+        <maintainer>
+            <email>sarah@example.com</email>
+            <name>Sarah</name>
+        </maintainer>
+    </maintainers>
+
+    <masters>
+        <master name="gentoo"/>
+    </masters>
+
+    <description>
+        Local overlay for custom ebuilds: hypnotix, circle-flags-svg, and dependencies.
+    </description>
+</metadata>
