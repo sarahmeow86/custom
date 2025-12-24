@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <use>
+        <flag name="gtk-doc">Build API documentation using gtk-doc</flag>
+        <flag name="vala">Generate vala bindings</flag>
+    </use>
+    <longdescription>
+        XApp is a library that provides cross-desktop libraries and common resources
+        for X-Apps (applications developed by the Linux Mint team). It includes
+        various widgets and utilities that can be used by applications.
+    </longdescription>
+    <upstream>
+        <remote-id type="github">linuxmint/xapp</remote-id>
+    </upstream>
+</pkgmetadata>
