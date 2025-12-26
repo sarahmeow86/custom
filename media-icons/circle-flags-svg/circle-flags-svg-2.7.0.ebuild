@@ -6,7 +6,7 @@ SRC_URI="http://packages.linuxmint.com/pool/main/c/circle-flags/circle-flags_${P
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE=""
 
 S="${WORKDIR}/circle-flags"
