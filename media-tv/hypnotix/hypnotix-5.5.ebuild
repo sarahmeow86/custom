@@ -18,7 +18,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 # Dependencies
 DEPEND="
     ${PYTHON_DEPS}
-    media-icons/circle-flags-svg
+    x11-misc/circle-flags-svg
     x11-themes/hicolor-icon-theme
     media-video/mpv[libmpv]
     $(python_gen_cond_dep '

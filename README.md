@@ -6,7 +6,7 @@ This overlay provides packages from Linux Mint that are not available in the off
 
 - **media-tv/hypnotix** - IPTV streaming application with support for live TV, movies and series
 - **dev-python/cinemagoer** - Python bindings for the Internet Movie Database (IMDb)
-- **media-icons/circle-flags-svg** - Collection of circular SVG country and language flags
+- **x11-misc/circle-flags-svg** - Collection of circular SVG country and language flags
 - **x11-misc/xapp-symbolic-icons** - Symbolic icons for XApp applications
 
 ## Installation
@@ -21,12 +21,7 @@ sudo eselect repository add custom git https://github.com/sarahmeow86/custom.git
 sudo emaint sync -r custom
 ```
 
-3. Add the custom category to Portage:
-```bash
-echo "media-icons" | sudo tee -a /etc/portage/categories
-```
-
-4. Install packages:
+3. Install packages:
 ```bash
 sudo emerge --ask media-tv/hypnotix
 ```
