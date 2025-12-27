@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <longdescription>
+        Symbolic icons for XApp applications from Linux Mint.
+    </longdescription>
+</pkgmetadata>
