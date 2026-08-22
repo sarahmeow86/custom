@@ -44,6 +44,14 @@ src_prepare() {
 
     # Fix license path
     sed -i 's|common-licenses/GPL|licenses/common/GPL/license.txt|g' "usr/lib/hypnotix/hypnotix.py"
+
+    # Force-register XAppStackSidebar's GType before GtkBuilder parses hypnotix.ui.
+    # Recent PyGObject no longer auto-registers custom widget types on import, so
+    # GtkBuilder fails with "Invalid object type 'XAppStackSidebar'" otherwise.
+    sed -i \
+        -e 's/from gi.repository import Gtk, Gdk, Gio, XApp, GdkPixbuf, GLib, Pango/from gi.repository import Gtk, Gdk, Gio, XApp, GdkPixbuf, GLib, Pango, GObject/' \
+        -e 's/self.builder.add_from_file(gladefile)/GObject.type_ensure(XApp.StackSidebar)\n        self.builder.add_from_file(gladefile)/' \
+        "usr/lib/hypnotix/hypnotix.py"
 }
 
 src_install() {
