@@ -7,7 +7,6 @@ This overlay provides packages from Linux Mint that are not available in the off
 - **media-tv/hypnotix** - IPTV streaming application with support for live TV, movies and series
 - **dev-python/cinemagoer** - Python bindings for the Internet Movie Database (IMDb)
 - **x11-misc/circle-flags-svg** - Collection of circular SVG country and language flags
-- **x11-misc/xapp-symbolic-icons** - Symbolic icons for XApp applications
 
 ## Installation
 

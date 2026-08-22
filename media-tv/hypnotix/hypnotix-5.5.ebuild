@@ -30,7 +30,7 @@ DEPEND="
     ')
     dev-python/cinemagoer[${PYTHON_SINGLE_USEDEP}]
     x11-libs/xapp
-    x11-misc/xapp-symbolic-icons
+    x11-themes/xapp-symbolic-icon-theme
     net-misc/yt-dlp
 "
 RDEPEND="${DEPEND}"
