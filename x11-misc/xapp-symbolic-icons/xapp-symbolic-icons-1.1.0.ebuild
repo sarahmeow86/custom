@@ -8,6 +8,7 @@ inherit meson
 DESCRIPTION="Symbolic icons for XApp applications"
 HOMEPAGE="https://github.com/linuxmint/xapp-symbolic-icons"
 SRC_URI="http://packages.linuxmint.com/pool/main/x/${PN}/${PN}_${PV}.tar.xz"
+S="${WORKDIR}/${PN}"
 
 LICENSE="GPL-3"
 SLOT="0"
