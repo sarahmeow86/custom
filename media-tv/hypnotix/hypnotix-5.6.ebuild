@@ -1,7 +1,7 @@
 # Copyright 2025 Gentoo Authors
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit python-single-r1 xdg-utils gnome2-utils
 
