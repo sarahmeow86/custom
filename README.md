@@ -8,6 +8,7 @@ This overlay provides packages not available in the official Gentoo repository, 
 - **dev-python/cinemagoer** - Python bindings for the Internet Movie Database (IMDb)
 - **x11-misc/circle-flags-svg** - Collection of circular SVG country and language flags
 - **app-admin/topgrade** - Upgrades everything on the system with a single command (~amd64)
+- **games-util/input-remapper** - Change and program the mapping of input device buttons (~amd64, fixes a broken shebang present in GURU's ebuild)
 
 ## Installation
 
