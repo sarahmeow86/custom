@@ -1,12 +1,13 @@
 # Custom Gentoo Overlay
 
-This overlay provides packages from Linux Mint that are not available in the official Gentoo repository.
+This overlay provides packages not available in the official Gentoo repository, mostly software from Linux Mint plus a few other tools.
 
 ## Packages
 
 - **media-tv/hypnotix** - IPTV streaming application with support for live TV, movies and series
 - **dev-python/cinemagoer** - Python bindings for the Internet Movie Database (IMDb)
 - **x11-misc/circle-flags-svg** - Collection of circular SVG country and language flags
+- **app-admin/topgrade** - Upgrades everything on the system with a single command (~amd64)
 
 ## Installation
 
@@ -27,6 +28,6 @@ sudo emerge --ask media-tv/hypnotix
 
 ## Notes
 
-- All packages are marked as stable (`amd64 x86`)
-- Source packages are fetched from packages.linuxmint.com and GitHub
+- Most packages are marked as stable (`amd64 x86`); app-admin/topgrade is keyworded `~amd64`
+- Source packages are fetched from packages.linuxmint.com, crates.io, and GitHub
 - The overlay uses EAPI=8

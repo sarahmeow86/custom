@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <longdescription>
+        Topgrade detects which tools you use and runs the appropriate
+        commands to update your system packages, language toolchains,
+        plugins, and more, all with a single command.
+    </longdescription>
+    <upstream>
+        <remote-id type="github">topgrade-rs/topgrade</remote-id>
+    </upstream>
+</pkgmetadata>
