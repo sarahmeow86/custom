@@ -3,7 +3,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{11..14} )
 
-inherit python-single-r1 xdg-utils gnome2-utils
+inherit desktop python-single-r1 xdg-utils gnome2-utils
 
 DESCRIPTION="An IPTV streaming application with support for live TV, movies and series"
 HOMEPAGE="https://github.com/linuxmint/hypnotix"
