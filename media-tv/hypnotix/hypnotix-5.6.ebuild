@@ -71,10 +71,13 @@ src_install() {
     insinto /usr/share/applications
     doins usr/share/applications/hypnotix.desktop
 
+    # Install app icon
+    doicon -s scalable usr/share/icons/hicolor/scalable/apps/hypnotix.svg
+
     # Install icons and assets
     insinto /usr/share/hypnotix
     doins -r usr/share/hypnotix/*
-    
+
     # Compile GSettings schemas
     insinto /usr/share/glib-2.0/schemas
 }
