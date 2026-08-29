@@ -975,10 +975,19 @@ src_compile() {
 	bun run build || die
 	popd >/dev/null || die
 
+	# tauri::generate_context!() decides dev-vs-bundled asset serving from
+	# cfg!(not(feature = "custom-protocol")) on the tauri crate -- normally
+	# turned on automatically by "cargo tauri build". Since we call cargo
+	# directly (there's no packaged tauri-cli), it defaults off, so the
+	# compiled binary tries to load the devUrl (http://localhost:1420)
+	# instead of the bundled dist/ assets: "Could not connect to
+	# localhost: Connection refused" in the webview. Handy's own Cargo.toml
+	# doesn't forward this feature itself, so enable it directly on the
+	# dependency via pkg/feature syntax.
 	ORT_LIB_LOCATION="/usr/lib64" \
 	ORT_PREFER_DYNAMIC_LINK=1 \
 	OPENSSL_NO_VENDOR=1 \
-		cargo_src_compile
+		cargo_src_compile --features tauri/custom-protocol
 }
 
 src_install() {
