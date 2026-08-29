@@ -921,27 +921,32 @@ QA_FLAGS_IGNORED="usr/bin/handy usr/lib/Handy/.*\.so.*"
 src_prepare() {
 	default
 
-	# tao/tao-macros, hf-hub, and tauri-nspanel are pinned via explicit
-	# rev=/branch= in Cargo.toml, so Cargo.lock records their source with
-	# a query string (e.g. "git+https://.../tao?rev=<sha>#<sha>"), which
+	# hf-hub and tauri-nspanel are plain git dependencies pinned via
+	# branch= in Cargo.toml, so Cargo.lock records their source with a
+	# query string (e.g. "git+https://.../hf-hub?branch=...#<sha>") that
 	# doesn't match the bare-URL [patch] entries cargo.eclass generates
-	# from GIT_CRATES (that same field doubles as the fetch URL base, so
-	# it can't carry a query string either -- adding one there just
-	# breaks the download URL, confirmed by testing). Strip the rev=/
-	# branch= qualifiers from both files -- the exact commit stays fully
-	# pinned via Cargo.lock's "#<sha>" fragment either way -- so their
-	# recorded git source is bare and matches cargo.eclass's patch keys.
+	# from GIT_CRATES. Strip branch= so both agree on a bare URL -- the
+	# exact commit stays pinned via Cargo.lock's "#<sha>" fragment
+	# either way. cargo_src_compile below runs plain "cargo build" (no
+	# --locked/--frozen), so cargo is free to rewrite the affected
+	# Cargo.lock entries in place; that's harmless and stays fully
+	# offline since local paths need no network to resolve.
 	sed -i \
-		-e 's/, rev = "c3bee28c1d446d95f08c95c3b6f8d4bde052b876"//' \
 		-e 's/, branch = "cancellable-downloads"//' \
 		-e 's/, branch = "v2.1"//' \
 		Cargo.toml || die
 
+	# tao/tao-macros aren't a plain dependency -- Handy's own Cargo.toml
+	# redirects them from crates.io to git via [patch.crates-io]. A
+	# config-level [patch] (what GIT_CRATES normally generates) can't
+	# override a manifest-level [patch.crates-io] redirect: cargo still
+	# tries to fetch the git source live and fails under --offline
+	# (confirmed by testing). Point [patch.crates-io] straight at the
+	# vendored directory instead, bypassing git entirely for these two.
 	sed -i \
-		-e 's|tao?rev=c3bee28c1d446d95f08c95c3b6f8d4bde052b876|tao|' \
-		-e 's|hf-hub?branch=cancellable-downloads|hf-hub|' \
-		-e 's|tauri-nspanel?branch=v2.1|tauri-nspanel|' \
-		Cargo.lock || die
+		-e "s|tao = { git = \"https://github.com/cjpais/tao\", rev = \"c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|tao = { path = \"${WORKDIR}/tao-c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|" \
+		-e "s|tao-macros = { git = \"https://github.com/cjpais/tao\", rev = \"c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|tao-macros = { path = \"${WORKDIR}/tao-c3bee28c1d446d95f08c95c3b6f8d4bde052b876/tao-macros\" }|" \
+		Cargo.toml || die
 }
 
 src_compile() {
