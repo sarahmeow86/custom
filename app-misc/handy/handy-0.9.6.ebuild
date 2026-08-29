@@ -901,12 +901,12 @@ RDEPEND="
 	dev-libs/openssl:0=
 	gui-libs/gtk-layer-shell
 	media-libs/alsa-lib
-	media-libs/gst-plugins-base:1.0
-	media-libs/gstreamer:1.0
+	media-libs/gst-plugins-base
+	media-libs/gst-plugins-bad
+	media-libs/gst-plugins-good
+	media-libs/gst-plugins-ugly
+	media-libs/gstreamer
 	media-libs/vulkan-loader
-	media-plugins/gst-plugins-bad:1.0
-	media-plugins/gst-plugins-good:1.0
-	media-plugins/gst-plugins-ugly:1.0
 	net-libs/libsoup:3.0
 	net-libs/webkit-gtk:4.1
 	sci-libs/onnxruntime-bin
