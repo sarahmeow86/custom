@@ -860,7 +860,7 @@ declare -A GIT_CRATES=(
 	[vad-rs]='https://github.com/cjpais/vad-rs;2a412ed858695b9251f3f5a1a20d95b59fa7c498;vad-rs-%commit%'
 )
 
-inherit cargo desktop udev xdg-utils
+inherit cargo desktop udev xdg
 
 DESCRIPTION="A free, open source, and extensible speech-to-text application that works completely offline"
 HOMEPAGE="https://handy.computer https://github.com/cjpais/Handy"
@@ -1013,7 +1013,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	xdg_icon_cache_update
+	xdg_pkg_postinst
 	udev_reload
 
 	elog "Handy captures global hotkeys and injects text via /dev/uinput,"
@@ -1023,6 +1023,6 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	xdg_icon_cache_update
+	xdg_pkg_postrm
 	udev_reload
 }
