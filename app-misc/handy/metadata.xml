@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <longdescription>
+        Handy is a free, open source, and extensible speech-to-text
+        application that works completely offline, using local whisper.cpp
+        and ONNX-based models to transcribe speech triggered by a global
+        hotkey. Captures global hotkeys and injects text via /dev/uinput,
+        so the running user must belong to the "input" group.
+    </longdescription>
+    <upstream>
+        <bugs-to>https://github.com/cjpais/Handy/issues</bugs-to>
+        <changelog>https://github.com/cjpais/Handy/releases</changelog>
+        <remote-id type="github">cjpais/Handy</remote-id>
+    </upstream>
+</pkgmetadata>

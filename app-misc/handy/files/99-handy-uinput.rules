@@ -1,0 +1,6 @@
+# rdev's grab() creates a virtual input device via /dev/uinput to inject
+# keystrokes and observe global hotkeys. The kernel default permissions on
+# that node are crw------- root:root; open it to the "input" group so a
+# normal user running Handy can use it. Users must be a member of "input"
+# (usermod -aG input <user>) for this to take effect.
+KERNEL=="uinput", GROUP="input", MODE="0660"
