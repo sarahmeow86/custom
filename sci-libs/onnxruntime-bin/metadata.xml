@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <longdescription>
+        Prebuilt ONNX Runtime, bumped past GURU's 1.22.0 because
+        app-misc/handy's "ort" crate requests ORT C API version 24,
+        which only 1.24.0+ provides.
+    </longdescription>
+    <upstream>
+        <bugs-to>https://github.com/microsoft/onnxruntime/issues</bugs-to>
+        <remote-id type="github">microsoft/onnxruntime</remote-id>
+    </upstream>
+</pkgmetadata>
