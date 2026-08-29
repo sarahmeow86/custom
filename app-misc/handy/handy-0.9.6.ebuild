@@ -925,16 +925,19 @@ src_prepare() {
 	# branch= in Cargo.toml, so Cargo.lock records their source with a
 	# query string (e.g. "git+https://.../hf-hub?branch=...#<sha>") that
 	# doesn't match the bare-URL [patch] entries cargo.eclass generates
-	# from GIT_CRATES. Strip branch= so both agree on a bare URL -- the
-	# exact commit stays pinned via Cargo.lock's "#<sha>" fragment
-	# either way. cargo_src_compile below runs plain "cargo build" (no
-	# --locked/--frozen), so cargo is free to rewrite the affected
-	# Cargo.lock entries in place; that's harmless and stays fully
-	# offline since local paths need no network to resolve.
+	# from GIT_CRATES. Strip branch= from both files so they agree on a
+	# bare URL (cargo does NOT auto-rewrite a mismatched Cargo.lock git
+	# source just because Cargo.toml changed, confirmed by testing --
+	# both need editing). The exact commit stays pinned via Cargo.lock's
+	# "#<sha>" fragment either way.
 	sed -i \
 		-e 's/, branch = "cancellable-downloads"//' \
 		-e 's/, branch = "v2.1"//' \
 		Cargo.toml || die
+	sed -i \
+		-e 's|hf-hub?branch=cancellable-downloads|hf-hub|' \
+		-e 's|tauri-nspanel?branch=v2.1|tauri-nspanel|' \
+		Cargo.lock || die
 
 	# tao/tao-macros aren't a plain dependency -- Handy's own Cargo.toml
 	# redirects them from crates.io to git via [patch.crates-io]. A
@@ -947,6 +950,9 @@ src_prepare() {
 		-e "s|tao = { git = \"https://github.com/cjpais/tao\", rev = \"c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|tao = { path = \"${WORKDIR}/tao-c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|" \
 		-e "s|tao-macros = { git = \"https://github.com/cjpais/tao\", rev = \"c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|tao-macros = { path = \"${WORKDIR}/tao-c3bee28c1d446d95f08c95c3b6f8d4bde052b876/tao-macros\" }|" \
 		Cargo.toml || die
+	sed -i \
+		-e 's|tao?rev=c3bee28c1d446d95f08c95c3b6f8d4bde052b876|tao|' \
+		Cargo.lock || die
 }
 
 src_compile() {
