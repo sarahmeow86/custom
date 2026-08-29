@@ -953,6 +953,20 @@ src_prepare() {
 	sed -i \
 		-e 's|tao?rev=c3bee28c1d446d95f08c95c3b6f8d4bde052b876|tao|' \
 		Cargo.lock || die
+
+	# ferrous-opencc's build.rs shells out to cbindgen to generate a C
+	# header (opencc.h) that nothing in this build consumes -- cbindgen
+	# in turn runs "cargo metadata" on ferrous-opencc's own Cargo.toml,
+	# which fails against our vendored-only registry (a floating
+	# "anyhow = ^1" requirement resolves against a stray lockfile
+	# instead of the 1.0.102 we actually vendored). Upstream's own Nix
+	# packaging (flake.nix postPatch) hits the same failure and disables
+	# the cbindgen call the same way; it was removed entirely in
+	# ferrous-opencc 0.3.1+.
+	sed -i \
+		-e 's/\.expect("Unable to generate bindings")/.ok();/' \
+		-e 's/\.write_to_file("opencc\.h");/\/\/ skipped: cbindgen disabled, see comment above/' \
+		"${ECARGO_HOME}/gentoo/ferrous-opencc-0.2.3/build.rs" || die
 }
 
 src_compile() {
