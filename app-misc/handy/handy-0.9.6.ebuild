@@ -886,11 +886,11 @@ KEYWORDS="~amd64"
 RESTRICT="network-sandbox test"
 
 BDEPEND="
+	dev-build/cmake
 	dev-lang/bun-bin
-	dev-util/cmake
 	media-libs/shaderc
 	dev-util/vulkan-headers
-	sys-devel/clang
+	llvm-core/clang
 	virtual/pkgconfig
 "
 
