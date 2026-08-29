@@ -907,6 +907,7 @@ RDEPEND="
 	media-libs/gst-plugins-ugly
 	media-libs/gstreamer
 	media-libs/vulkan-loader
+	media-video/pipewire[pipewire-alsa]
 	net-libs/libsoup:3.0
 	net-libs/webkit-gtk:4.1
 	>=sci-libs/onnxruntime-bin-1.24.2
