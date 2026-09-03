@@ -882,7 +882,6 @@ LICENSE+="
 "
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+onnxruntime-bin"
 
 RESTRICT="network-sandbox test"
 
@@ -911,8 +910,7 @@ RDEPEND="
 	media-video/pipewire[pipewire-alsa]
 	net-libs/libsoup:3.0
 	net-libs/webkit-gtk:4.1
-	onnxruntime-bin? ( >=sci-libs/onnxruntime-bin-1.24.2 )
-	!onnxruntime-bin? ( >=sci-libs/onnxruntime-1.24.2 )
+	>=sci-libs/onnxruntime-1.24.2
 	x11-libs/gtk+:3
 	x11-libs/libXtst
 	virtual/udev
