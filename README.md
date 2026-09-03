@@ -11,7 +11,6 @@ This overlay provides packages not available in the official Gentoo repository, 
 - **games-util/input-remapper** - Change and program the mapping of input device buttons (fixes a broken shebang present in GURU's ebuild)
 - **www-client/brave-origin** - Standalone Brave web browser without rewards, wallet, AI or other extras
 - **app-misc/handy** - Offline speech-to-text dictation app using local whisper.cpp/ONNX models (~amd64)
-- **sci-libs/onnxruntime-bin** - Prebuilt ONNX Runtime, bumped past GURU's 1.22.0 (app-misc/handy's "ort" crate needs C API version 24, only available from 1.24.0+)
 
 ## Installation
 
