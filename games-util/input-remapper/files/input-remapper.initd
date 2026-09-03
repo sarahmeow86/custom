@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="input-remapper"
+description="Input Remapper background service"
+
+command="/usr/bin/input-remapper-service"
+command_background="yes"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+# Permette di aggiungere opzioni da /etc/conf.d/input-remapper
+command_args="${command_args}"
+
+depend() {
+    need localmount
+    after modules
+    use dbus
+}

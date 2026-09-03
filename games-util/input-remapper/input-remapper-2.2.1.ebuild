@@ -14,6 +14,9 @@ HOMEPAGE="https://github.com/sezanzeb/input-remapper"
 SRC_URI="https://github.com/sezanzeb/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
+# files/input-remapper.initd and files/input-remapper.confd, from
+# https://codeberg.org/sarahmeow86/input-remapper-openrc
+LICENSE+=" MIT"
 SLOT="0"
 KEYWORDS="amd64"
 
@@ -63,6 +66,10 @@ src_install() {
 	# Install systemd service
 	systemd_dounit data/input-remapper.service
 
+	# Install OpenRC service, for systems without systemd
+	newinitd "${FILESDIR}"/input-remapper.initd input-remapper
+	newconfd "${FILESDIR}"/input-remapper.confd input-remapper
+
 	# Install desktop file
 	domenu data/input-remapper-gtk.desktop
 
@@ -108,6 +115,12 @@ src_install() {
 pkg_postinst() {
 	xdg_pkg_postinst
 	udev_reload
+
+	if [[ -z ${REPLACING_VERSIONS} ]]; then
+		elog "To run input-remapper-service at boot under OpenRC:"
+		elog "    rc-update add input-remapper default"
+		elog "    rc-service input-remapper start"
+	fi
 }
 
 pkg_postrm() {

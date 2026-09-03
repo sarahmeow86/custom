@@ -8,7 +8,9 @@
     <longdescription>
         Input Remapper lets you change and program the mapping of your
         keyboard, mouse, and other input device buttons, including
-        combinations and macros.
+        combinations and macros. Also installs an OpenRC service
+        (input-remapper) alongside the upstream systemd one, for
+        systems that don't use systemd.
     </longdescription>
     <upstream>
         <bugs-to>https://github.com/sezanzeb/input-remapper/issues</bugs-to>
