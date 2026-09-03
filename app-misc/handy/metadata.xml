@@ -12,6 +12,13 @@
         hotkey. Captures global hotkeys and injects text via /dev/uinput,
         so the running user must belong to the "input" group.
     </longdescription>
+    <use>
+        <flag name="onnxruntime-bin">
+            Link against the prebuilt <pkg>sci-libs/onnxruntime-bin</pkg>
+            instead of building against <pkg>sci-libs/onnxruntime</pkg>
+            compiled from source
+        </flag>
+    </use>
     <upstream>
         <bugs-to>https://github.com/cjpais/Handy/issues</bugs-to>
         <changelog>https://github.com/cjpais/Handy/releases</changelog>
