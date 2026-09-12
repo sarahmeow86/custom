@@ -21,7 +21,10 @@ SLOT="0"
 KEYWORDS=""
 
 PATCHES=(
-	"${FILESDIR}/build-backend.patch"
+	# build-backend.patch is NOT applied here: upstream's main branch
+	# already carries its own [build-system] section (added after the
+	# 2.2.1 tag this patch targets), so applying it too would duplicate
+	# the section and break pyproject.toml parsing.
 	"${FILESDIR}/mo-files.patch"
 )
 
