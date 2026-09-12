@@ -8,8 +8,8 @@ CRATES="
 	addr2line@0.25.1
 	adler2@2.0.1
 	ahash@0.8.12
-	aho-corasick@1.1.4
-	android_system_properties@0.1.5
+	aho-corasick@1.1.5
+	android_system_properties@0.1.6
 	annotate-snippets@0.12.16
 	anstream@1.0.0
 	anstyle-parse@1.0.0
@@ -28,56 +28,57 @@ CRATES="
 	async-recursion@1.1.1
 	async-signal@0.2.14
 	async-task@4.7.1
-	async-trait@0.1.91
+	async-trait@0.1.92
 	atomic-waker@1.1.2
 	autocfg@1.5.1
-	aws-lc-rs@1.17.3
-	aws-lc-sys@0.43.0
+	aws-lc-rs@1.18.1
+	aws-lc-sys@0.45.0
 	backtrace@0.3.76
 	base62@2.2.4
 	base64@0.22.1
+	base64@0.23.1
 	base64ct@1.8.3
 	bitflags@1.3.2
 	bitflags@2.13.1
 	block-buffer@0.10.4
 	block2@0.6.2
-	blocking@1.6.2
-	bstr@1.13.0
+	blocking@1.7.0
+	bstr@1.13.1
 	bumpalo@3.20.3
 	byteorder@1.5.0
 	bytes@1.12.1
-	cc@1.4.0
+	cc@1.4.5
 	cfg-if@1.0.4
 	cfg_aliases@0.2.2
-	chacha20@0.10.1
+	chacha20@0.10.2
 	chrono@0.4.45
-	clap-cargo@0.18.3
-	clap@4.6.4
-	clap_builder@4.6.2
-	clap_complete@4.6.7
+	clap-cargo@0.19.0
+	clap@4.6.6
+	clap_builder@4.6.6
+	clap_complete@4.6.9
 	clap_derive@4.6.4
 	clap_lex@1.1.0
-	clap_mangen@0.3.0
+	clap_mangen@0.3.3
 	cmake@0.1.58
 	color-eyre@0.6.5
 	color-spantrace@0.3.0
 	colorchoice@1.0.5
-	combine@4.6.7
+	combine@4.6.8
 	concurrent-queue@2.5.0
 	console@0.16.4
 	const-oid@0.9.6
 	const-random-macro@0.1.16
 	const-random@0.1.18
-	cookie@0.18.1
+	cookie@0.18.2
 	cookie_store@0.22.1
 	core-foundation-sys@0.8.7
 	core-foundation@0.10.1
 	cpufeatures@0.2.17
-	cpufeatures@0.3.0
-	crc32fast@1.5.0
-	crossbeam-deque@0.8.7
-	crossbeam-epoch@0.9.20
-	crossbeam-utils@0.8.22
+	cpufeatures@0.3.1
+	crc32fast@1.5.1
+	crossbeam-deque@0.8.8
+	crossbeam-epoch@0.9.21
+	crossbeam-utils@0.8.23
 	crossterm@0.29.0
 	crossterm_winapi@0.9.1
 	crunchy@0.2.4
@@ -91,17 +92,17 @@ CRATES="
 	dirs-sys@0.5.0
 	dirs@6.0.0
 	dispatch2@0.3.1
-	displaydoc@0.2.6
+	displaydoc@0.2.7
 	dlv-list@0.5.2
 	document-features@0.2.12
 	dunce@1.0.5
 	ed25519-dalek@2.2.0
 	ed25519@2.2.3
 	edit@0.1.5
-	either@1.17.0
+	either@1.18.0
 	encode_unicode@1.0.0
 	encoding_rs@0.8.35
-	encoding_rs_io@0.1.7
+	encoding_rs_io@0.1.8
 	endi@1.1.1
 	enumflags2@0.7.12
 	enumflags2_derive@0.7.12
@@ -109,67 +110,67 @@ CRATES="
 	errno@0.3.14
 	etcetera@0.11.0
 	event-listener-strategy@0.5.4
-	event-listener@5.4.1
-	eyre@0.6.12
+	event-listener@5.4.2
+	eyre@0.6.14
 	fastrand@2.5.0
 	fiat-crypto@0.2.9
 	filedescriptor@0.8.3
 	filetime@0.2.29
-	find-msvc-tools@0.1.9
-	flate2@1.1.9
+	find-msvc-tools@0.1.12
+	flate2@1.1.10
 	fnv@1.0.7
 	form_urlencoded@1.2.2
-	freedesktop-desktop-entry@0.8.1
+	freedesktop-desktop-entry@0.8.2
 	fs_extra@1.3.0
-	futures-channel@0.3.33
-	futures-core@0.3.33
-	futures-executor@0.3.33
-	futures-io@0.3.33
+	futures-channel@0.3.34
+	futures-core@0.3.34
+	futures-executor@0.3.34
+	futures-io@0.3.34
 	futures-lite@2.6.1
-	futures-macro@0.3.33
-	futures-sink@0.3.33
-	futures-task@0.3.33
-	futures-util@0.3.33
-	futures@0.3.33
+	futures-macro@0.3.34
+	futures-sink@0.3.34
+	futures-task@0.3.34
+	futures-util@0.3.34
+	futures@0.3.34
 	generic-array@0.14.7
 	getrandom@0.2.17
 	getrandom@0.3.4
 	getrandom@0.4.3
 	gimli@0.32.3
 	glob@0.3.4
-	globset@0.4.19
+	globset@0.4.20
 	globwalk@0.8.1
 	granit-parser@0.0.7
-	h2@0.4.15
+	h2@0.4.19
 	hashbrown@0.14.5
 	hashbrown@0.17.1
 	heck@0.5.0
-	hermit-abi@0.5.2
+	hermit-abi@0.5.3
 	hex@0.4.3
 	home@0.5.12
-	http-body-util@0.1.4
+	http-body-util@0.1.5
 	http-body@1.1.0
-	http@1.4.2
+	http@1.5.0
 	httparse@1.10.1
 	hyper-rustls@0.27.9
 	hyper-util@0.1.20
-	hyper@1.11.0
+	hyper@1.11.1
 	iana-time-zone-haiku@0.1.2
 	iana-time-zone@0.1.65
-	icu_collections@2.2.0
-	icu_locale_core@2.2.0
-	icu_normalizer@2.2.0
-	icu_normalizer_data@2.2.0
-	icu_properties@2.2.0
-	icu_properties_data@2.2.0
-	icu_provider@2.2.0
+	icu_collections@2.3.0
+	icu_locale_core@2.3.0
+	icu_normalizer@2.3.0
+	icu_normalizer_data@2.3.0
+	icu_properties@2.3.0
+	icu_properties_data@2.3.0
+	icu_provider@2.3.1
 	idna@1.1.0
 	idna_adapter@1.2.2
-	ignore@0.4.31
+	ignore@0.4.33
 	indenter@0.3.4
-	indexmap@2.14.0
+	indexmap@2.14.2
 	indicatif@0.18.6
-	ipnet@2.12.0
+	ipnet@2.12.2
 	is_elevated@0.1.2
 	is_terminal_polyfill@1.70.2
 	itertools@0.11.0
@@ -181,16 +182,16 @@ CRATES="
 	jni-sys@0.4.1
 	jni@0.22.4
 	jobserver@0.1.35
-	js-sys@0.3.103
+	js-sys@0.3.105
 	lazy_static@1.5.0
 	libc@0.2.189
-	libredox@0.1.18
+	libredox@0.1.23
 	linux-raw-sys@0.12.1
 	linux-raw-sys@0.4.15
-	litemap@0.8.2
+	litemap@0.8.3
 	litrs@1.0.0
 	lock_api@0.4.14
-	log@0.4.33
+	log@0.4.34
 	lru-slab@0.1.2
 	mac-notification-sys@0.6.15
 	manyhow-macros@0.11.4
@@ -201,7 +202,8 @@ CRATES="
 	merge2@0.3.2
 	merge2_derive@0.3.1
 	miniz_oxide@0.8.9
-	mio@1.2.2
+	miniz_oxide@0.9.1
+	mio@1.2.3
 	nix@0.31.3
 	nohash-hasher@0.2.0
 	normpath@1.5.1
@@ -222,7 +224,7 @@ CRATES="
 	option-ext@0.2.0
 	ordered-multimap@0.7.3
 	ordered-stream@0.2.0
-	owo-colors@4.3.0
+	owo-colors@4.4.0
 	parking@2.2.1
 	parking_lot@0.12.5
 	parking_lot_core@0.9.12
@@ -232,16 +234,16 @@ CRATES="
 	pin-project-lite@0.2.17
 	piper@0.2.5
 	pkcs8@0.10.2
-	pkg-config@0.3.33
+	pkg-config@0.3.34
 	polling@3.11.0
-	portable-atomic@1.14.0
-	potential_utf@0.1.5
+	portable-atomic@1.15.0
+	potential_utf@0.1.6
 	powerfmt@0.2.0
 	proc-macro-crate@3.5.0
 	proc-macro-utils@0.10.0
 	proc-macro2@1.0.107
 	quick-xml@0.38.4
-	quinn-proto@0.11.16
+	quinn-proto@0.11.17
 	quinn-udp@0.5.15
 	quinn@0.11.11
 	quote@1.0.47
@@ -253,7 +255,7 @@ CRATES="
 	rand_pcg@0.10.2
 	redox_syscall@0.5.18
 	redox_users@0.5.2
-	regex-automata@0.4.16
+	regex-automata@0.4.18
 	regex-split@0.1.0
 	regex-syntax@0.8.11
 	regex@1.13.1
@@ -273,8 +275,8 @@ CRATES="
 	rustls-pki-types@1.15.1
 	rustls-platform-verifier-android@0.1.1
 	rustls-platform-verifier@0.7.0
-	rustls-webpki@0.103.13
-	rustls@0.23.42
+	rustls-webpki@0.103.15
+	rustls@0.23.43
 	rustversion@1.0.23
 	same-file@1.0.6
 	schannel@0.1.29
@@ -316,7 +318,7 @@ CRATES="
 	strum_macros@0.28.0
 	subtle@2.6.1
 	syn@2.0.119
-	syn@3.0.3
+	syn@3.0.5
 	sync_wrapper@1.0.2
 	synstructure@0.13.2
 	sys-locale@0.3.2
@@ -326,27 +328,27 @@ CRATES="
 	tauri-winrt-notification@0.7.3
 	tempfile@3.27.0
 	thiserror-impl@1.0.69
-	thiserror-impl@2.0.19
+	thiserror-impl@2.0.20
 	thiserror@1.0.69
-	thiserror@2.0.19
+	thiserror@2.0.20
 	thread_local@1.1.10
 	time-core@0.1.9
 	time-macros@0.2.32
-	time@0.3.54
+	time@0.3.55
 	tiny-keccak@2.0.2
-	tinystr@0.8.3
-	tinyvec@1.12.0
+	tinystr@0.8.4
+	tinyvec@1.13.2
 	tinyvec_macros@0.1.1
-	tokio-rustls@0.26.4
+	tokio-rustls@0.26.5
 	tokio-util@0.7.19
 	tokio@1.53.1
 	toml@0.8.23
-	toml@1.1.3+spec-1.1.0
+	toml@1.1.5+spec-1.1.0
 	toml_datetime@0.6.11
 	toml_datetime@1.1.1+spec-1.1.0
 	toml_edit@0.22.27
 	toml_edit@0.25.13+spec-1.1.0
-	toml_parser@1.1.2+spec-1.1.0
+	toml_parser@1.1.3+spec-1.1.0
 	toml_write@0.1.2
 	toml_writer@1.1.2+spec-1.1.0
 	tower-http@0.6.11
@@ -368,31 +370,31 @@ CRATES="
 	unicode-width@0.2.2
 	unit-prefix@0.5.2
 	untrusted@0.9.0
-	ureq-proto@0.6.0
-	ureq@3.3.0
+	ureq-proto@0.6.2
+	ureq@3.4.1
 	url@2.5.8
 	urlencoding@2.1.3
 	utf8-zero@0.8.1
 	utf8_iter@1.0.4
 	utf8parse@0.2.2
-	uuid@1.24.0
+	uuid@1.26.0
 	valuable@0.1.1
 	version_check@0.9.5
 	walkdir@2.5.0
 	want@0.3.1
 	wasi@0.11.1+wasi-snapshot-preview1
 	wasip2@1.0.4+wasi-0.2.12
-	wasm-bindgen-futures@0.4.76
-	wasm-bindgen-macro-support@0.2.126
-	wasm-bindgen-macro@0.2.126
-	wasm-bindgen-shared@0.2.126
-	wasm-bindgen@0.2.126
-	web-sys@0.3.103
+	wasm-bindgen-futures@0.4.78
+	wasm-bindgen-macro-support@0.2.128
+	wasm-bindgen-macro@0.2.128
+	wasm-bindgen-shared@0.2.128
+	wasm-bindgen@0.2.128
+	web-sys@0.3.105
 	web-time@1.1.0
 	webpki-root-certs@1.0.9
 	webpki-roots@1.0.9
 	which@4.4.2
-	which@8.0.5
+	which@8.0.6
 	widestring@0.4.3
 	wildmatch@2.6.1
 	winapi-i686-pc-windows-gnu@0.4.0
@@ -436,30 +438,31 @@ CRATES="
 	winnow@0.7.15
 	winnow@1.0.4
 	wit-bindgen@0.57.1
-	writeable@0.6.3
+	writeable@0.6.4
 	xattr@1.6.1
 	xdg@3.0.0
 	yoke-derive@0.8.2
 	yoke@0.8.3
-	zbus@5.18.0
-	zbus_macros@5.18.0
+	zbus@5.19.0
+	zbus_macros@5.19.0
 	zbus_names@4.3.4
-	zerocopy-derive@0.8.55
-	zerocopy@0.8.55
+	zcheapstr@1.1.0
+	zerocopy-derive@0.8.56
+	zerocopy@0.8.56
 	zerofrom-derive@0.1.7
 	zerofrom@0.1.8
 	zeroize@1.9.0
-	zerotrie@0.2.4
-	zerovec-derive@0.11.3
-	zerovec@0.11.6
+	zerotrie@0.2.5
+	zerovec-derive@0.11.6
+	zerovec@0.11.8
 	zip@6.0.0
 	zipsign-api@0.1.5
-	zlib-rs@0.6.6
+	zlib-rs@0.6.7
 	zmij@1.0.23
 	zopfli@0.8.3
-	zvariant@5.13.1
-	zvariant_derive@5.13.1
-	zvariant_utils@3.5.0
+	zvariant@5.15.0
+	zvariant_derive@5.15.0
+	zvariant_utils@4.2.0
 "
 
 inherit cargo
