@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <longdescription lang="en">
+        Responsive design and fluid layout for all kinds of screens and
+        devices, designed to serve your project documentation in a
+        user-friendly way with optimal readability.
+    </longdescription>
+    <upstream>
+        <remote-id type="github">squidfunk/mkdocs-material</remote-id>
+        <remote-id type="pypi">mkdocs-material</remote-id>
+    </upstream>
+    <use>
+        <flag name="social">
+            Install the dependencies of the "social" plugin
+        </flag>
+    </use>
+</pkgmetadata>
