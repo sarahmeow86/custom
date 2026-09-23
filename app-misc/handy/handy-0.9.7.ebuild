@@ -160,6 +160,7 @@ CRATES="
 	dtor@0.3.0
 	dunce@1.0.5
 	dyn-clone@1.0.20
+	earshot@1.2.2
 	embed-resource@3.0.6
 	embed_plist@1.2.2
 	encode_unicode@1.0.0
@@ -500,6 +501,7 @@ CRATES="
 	ringbuffer@0.15.0
 	rkyv@0.7.46
 	rkyv_derive@0.7.46
+	rtrb@0.4.0
 	rubato@0.16.2
 	rusqlite@0.37.0
 	rusqlite_migration@2.3.0
@@ -661,8 +663,8 @@ CRATES="
 	tracing-attributes@0.1.31
 	tracing-core@0.1.36
 	tracing@0.1.44
-	transcribe-cpp-sys@0.2.0
-	transcribe-cpp@0.2.0
+	transcribe-cpp-sys@0.2.3
+	transcribe-cpp@0.2.3
 	transcribe-rs@0.3.8
 	transpose@0.2.3
 	tray-icon@0.24.1
