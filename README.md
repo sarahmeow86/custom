@@ -11,6 +11,7 @@ This overlay provides packages not available in the official Gentoo repository, 
 - **games-util/input-remapper** - Change and program the mapping of input device buttons (fixes a broken shebang present in GURU's ebuild)
 - **www-client/brave-origin** - Standalone Brave web browser without rewards, wallet, AI or other extras
 - **app-misc/handy** - Offline speech-to-text dictation app using local whisper.cpp/ONNX models (~amd64)
+- **gui-apps/kwtype** - Virtual keyboard input tool for KDE Plasma Wayland, used by app-misc/handy to type accented characters (~amd64)
 - **dev-python/mkdocs** - Static site generator geared towards project documentation, removed from ::gentoo
 - **dev-python/mkdocs-material** - Material Design theme for MkDocs, removed from ::gentoo (~amd64)
 

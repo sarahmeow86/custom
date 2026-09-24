@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>sarah@example.com</email>
+        <name>Sarah</name>
+    </maintainer>
+    <longdescription>
+        KWtype types text on KDE Plasma Wayland through KWin's privileged
+        Fake Input protocol, which wtype's virtual-keyboard protocol does not
+        cover. It builds the key events from the active XKB layout, so
+        characters such as accented vowels are typed correctly. Used by
+        app-misc/handy as its preferred typing tool on KDE Wayland.
+    </longdescription>
+    <upstream>
+        <bugs-to>https://github.com/Sporif/KWtype/issues</bugs-to>
+        <remote-id type="github">Sporif/KWtype</remote-id>
+    </upstream>
+</pkgmetadata>
