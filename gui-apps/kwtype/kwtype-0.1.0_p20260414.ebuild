@@ -27,3 +27,15 @@ BDEPEND="
 	dev-qt/qtbase:6
 	virtual/pkgconfig
 "
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	if [[ -z ${REPLACING_VERSIONS} ]]; then
+		elog "KWtype can only type characters that exist in one of your configured"
+		elog "keyboard layouts. If you type characters missing from the US layout"
+		elog "(e.g. accented letters like à, è, ñ, ß), add your language's layout"
+		elog "alongside US in System Settings > Keyboard > Layouts: KWtype will then"
+		elog "switch between them automatically."
+	fi
+}
