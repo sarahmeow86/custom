@@ -2,13 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{11..15} )
 
 inherit python-single-r1
 
 DESCRIPTION="Python bindings for the Internet Movie Database (IMDb)"
 HOMEPAGE="https://cinemagoer.github.io/"
-SRC_URI="https://github.com/cinemagoer/cinemagoer/archive/refs/tags/${PV}.tar.gz -> cinemagoer-${PV}.tar.gz"
+SRC_URI="https://github.com/cinemagoer/cinemagoer/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/cinemagoer-${PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -31,8 +32,6 @@ BDEPEND="
 		dev-python/installer[${PYTHON_USEDEP}]
 	')
 "
-
-S="${WORKDIR}/cinemagoer-${PV}"
 
 src_compile() {
 	${EPYTHON} -m build --wheel --no-isolation || die
