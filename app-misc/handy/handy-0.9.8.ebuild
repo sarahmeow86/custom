@@ -663,8 +663,8 @@ CRATES="
 	tracing-attributes@0.1.31
 	tracing-core@0.1.36
 	tracing@0.1.44
-	transcribe-cpp-sys@0.2.3
-	transcribe-cpp@0.2.3
+	transcribe-cpp-sys@0.2.4
+	transcribe-cpp@0.2.4
 	transcribe-rs@0.3.8
 	transpose@0.2.3
 	tray-icon@0.24.1
