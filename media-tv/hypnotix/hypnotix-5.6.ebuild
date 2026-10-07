@@ -7,7 +7,8 @@ inherit desktop python-single-r1 xdg-utils gnome2-utils
 
 DESCRIPTION="An IPTV streaming application with support for live TV, movies and series"
 HOMEPAGE="https://github.com/linuxmint/hypnotix"
-SRC_URI="https://github.com/linuxmint/hypnotix/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="http://packages.linuxmint.com/pool/main/h/hypnotix/hypnotix_${PV}.tar.xz -> ${P}.tar.xz"
+S="${WORKDIR}/hypnotix"
 
 LICENSE="GPL-3.0-or-later"
 SLOT="0"
