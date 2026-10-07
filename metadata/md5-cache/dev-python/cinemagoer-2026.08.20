@@ -1,0 +1,15 @@
+BDEPEND=python_single_target_python3_12? ( dev-lang/python:3.12 ) python_single_target_python3_13? ( dev-lang/python:3.13 ) python_single_target_python3_14? ( dev-lang/python:3.14 ) python_single_target_python3_15? ( dev-lang/python:3.15 ) python_single_target_python3_12? ( dev-python/setuptools[python_targets_python3_12(-)] dev-python/build[python_targets_python3_12(-)] dev-python/installer[python_targets_python3_12(-)] ) python_single_target_python3_13? ( dev-python/setuptools[python_targets_python3_13(-)] dev-python/build[python_targets_python3_13(-)] dev-python/installer[python_targets_python3_13(-)] ) python_single_target_python3_14? ( dev-python/setuptools[python_targets_python3_14(-)] dev-python/build[python_targets_python3_14(-)] dev-python/installer[python_targets_python3_14(-)] ) python_single_target_python3_15? ( dev-python/setuptools[python_targets_python3_15(-)] dev-python/build[python_targets_python3_15(-)] dev-python/installer[python_targets_python3_15(-)] )
+DEFINED_PHASES=compile install setup
+DESCRIPTION=Python bindings for the Internet Movie Database (IMDb)
+EAPI=8
+HOMEPAGE=https://cinemagoer.github.io/
+INHERIT=python-single-r1
+IUSE=python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS=amd64 x86
+LICENSE=GPL-2
+RDEPEND=python_single_target_python3_12? ( dev-lang/python:3.12 ) python_single_target_python3_13? ( dev-lang/python:3.13 ) python_single_target_python3_14? ( dev-lang/python:3.14 ) python_single_target_python3_15? ( dev-lang/python:3.15 ) python_single_target_python3_12? ( >=dev-python/lxml-6.1.1[python_targets_python3_12(-)] dev-python/sqlalchemy[python_targets_python3_12(-)] ) python_single_target_python3_13? ( >=dev-python/lxml-6.1.1[python_targets_python3_13(-)] dev-python/sqlalchemy[python_targets_python3_13(-)] ) python_single_target_python3_14? ( >=dev-python/lxml-6.1.1[python_targets_python3_14(-)] dev-python/sqlalchemy[python_targets_python3_14(-)] ) python_single_target_python3_15? ( >=dev-python/lxml-6.1.1[python_targets_python3_15(-)] dev-python/sqlalchemy[python_targets_python3_15(-)] )
+REQUIRED_USE=^^ ( python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15 )
+SLOT=0
+SRC_URI=https://github.com/cinemagoer/cinemagoer/archive/refs/tags/2026.08.20.tar.gz -> cinemagoer-2026.08.20.gh.tar.gz
+_eclasses_=eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	python-utils-r1	85d8fb641bb0e79b1ae893556e9c57bc	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57
+_md5_=0faf9b56678270b78cece7565a8b8141
