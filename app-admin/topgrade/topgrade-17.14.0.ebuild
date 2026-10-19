@@ -16,8 +16,8 @@ CRATES="
 	anstyle-query@1.1.5
 	anstyle-wincon@3.0.11
 	anstyle@1.0.14
-	arbitrary@1.4.2
-	arc-swap@1.9.2
+	arbitrary@1.5.0
+	arc-swap@1.9.3
 	arraydeque@0.5.1
 	async-broadcast@0.7.2
 	async-channel@2.5.0
@@ -25,14 +25,14 @@ CRATES="
 	async-io@2.6.0
 	async-lock@3.4.2
 	async-process@2.5.0
-	async-recursion@1.1.1
+	async-recursion@1.2.0
 	async-signal@0.2.14
 	async-task@4.7.1
 	async-trait@0.1.92
 	atomic-waker@1.1.2
 	autocfg@1.5.1
-	aws-lc-rs@1.18.1
-	aws-lc-sys@0.45.0
+	aws-lc-rs@1.18.2
+	aws-lc-sys@0.46.0
 	backtrace@0.3.76
 	base62@2.2.6
 	base64@0.22.1
@@ -47,7 +47,7 @@ CRATES="
 	bumpalo@3.20.3
 	byteorder@1.5.0
 	bytes@1.12.1
-	cc@1.5.1
+	cc@1.8.0
 	cfg-if@1.0.5
 	cfg_aliases@0.2.2
 	chacha20@0.10.2
@@ -63,7 +63,7 @@ CRATES="
 	color-eyre@0.6.5
 	color-spantrace@0.3.0
 	colorchoice@1.0.5
-	combine@4.6.8
+	combine@4.6.9
 	concurrent-queue@2.5.0
 	console@0.16.6
 	const-oid@0.9.6
@@ -88,8 +88,8 @@ CRATES="
 	curve25519-dalek-derive@0.1.1
 	curve25519-dalek@4.1.3
 	der@0.7.10
-	deranged@0.5.8
-	derive_arbitrary@1.4.2
+	deranged@0.5.9
+	derive_arbitrary@1.5.0
 	digest@0.10.7
 	dirs-sys@0.5.0
 	dirs@6.0.0
@@ -101,14 +101,14 @@ CRATES="
 	ed25519-dalek@2.2.0
 	ed25519@2.2.3
 	edit@0.1.5
-	either@1.18.0
+	either@1.19.0
 	encode_unicode@1.0.0
 	encoding_rs@0.8.42
 	encoding_rs_io@0.1.8
 	endi@1.1.1
 	enumflags2@0.7.12
 	enumflags2_derive@0.7.12
-	equivalent@1.0.2
+	equivalent@1.0.3
 	errno@0.3.14
 	etcetera@0.11.0
 	event-listener-strategy@0.5.4
@@ -143,7 +143,7 @@ CRATES="
 	globset@0.4.20
 	globwalk@0.8.1
 	granit-parser@0.0.7
-	h2@0.4.19
+	h2@0.4.20
 	hashbrown@0.14.5
 	hashbrown@0.17.1
 	heck@0.5.0
@@ -156,7 +156,7 @@ CRATES="
 	httparse@1.10.1
 	hyper-rustls@0.27.10
 	hyper-util@0.1.21
-	hyper@1.11.1
+	hyper@1.12.0
 	iana-time-zone-haiku@0.1.2
 	iana-time-zone@0.1.65
 	icu_collections@2.3.0
@@ -185,13 +185,13 @@ CRATES="
 	jni@0.22.4
 	jobserver@0.1.35
 	js-sys@0.3.106
-	lazy_static@1.5.0
-	libc@0.2.189
+	lazy_static@1.5.1
+	libc@0.2.191
 	libredox@0.1.25
 	linux-raw-sys@0.12.1
 	linux-raw-sys@0.4.15
 	litemap@0.8.3
-	litrs@1.0.0
+	litrs@1.0.1
 	lock_api@0.4.14
 	log@0.4.34
 	lru-slab@0.1.3
@@ -206,7 +206,7 @@ CRATES="
 	mime@0.3.17
 	miniz_oxide@0.8.9
 	miniz_oxide@0.9.1
-	mio@1.2.3
+	mio@1.2.4
 	multiversion_no_op@1.0.0
 	nix@0.31.3
 	nohash-hasher@0.2.0
@@ -220,7 +220,7 @@ CRATES="
 	objc2-encode@4.1.0
 	objc2-foundation@0.3.2
 	objc2-io-kit@0.3.2
-	objc2@0.6.4
+	objc2@0.6.5
 	object@0.37.3
 	once_cell@1.21.4
 	once_cell_polyfill@1.70.2
@@ -242,13 +242,13 @@ CRATES="
 	polling@3.11.0
 	portable-atomic@1.15.0
 	potential_utf@0.1.6
-	powerfmt@0.2.0
+	powerfmt@0.2.1
 	proc-macro-crate@3.5.0
 	proc-macro-utils@0.10.0
 	proc-macro2@1.0.107
 	quick-xml@0.38.4
-	quinn-proto@0.11.18
-	quinn-udp@0.5.15
+	quinn-proto@0.11.19
+	quinn-udp@0.5.16
 	quinn@0.11.12
 	quote@1.0.47
 	r-efi@5.3.0
@@ -275,15 +275,15 @@ CRATES="
 	rustc_version@0.4.1
 	rustix@0.38.44
 	rustix@1.1.5
-	rustls-native-certs@0.8.4
+	rustls-native-certs@0.8.5
 	rustls-pki-types@1.15.1
 	rustls-platform-verifier-android@0.2.0
 	rustls-platform-verifier@0.7.1
 	rustls-webpki@0.103.15
-	rustls@0.23.45
+	rustls@0.23.46
 	rustversion@1.0.23
 	same-file@1.0.6
-	schannel@0.1.29
+	schannel@0.1.30
 	scopeguard@1.2.0
 	security-framework-sys@2.17.0
 	security-framework@3.7.0
@@ -294,10 +294,10 @@ CRATES="
 	serde@1.0.229
 	serde_core@1.0.229
 	serde_derive@1.0.229
-	serde_json@1.0.151
+	serde_json@1.0.154
 	serde_repr@0.1.21
 	serde_spanned@0.6.9
-	serde_spanned@1.1.1
+	serde_spanned@1.1.2
 	sha2@0.10.9
 	sharded-slab@0.1.7
 	shell-words@1.1.1
@@ -322,7 +322,7 @@ CRATES="
 	strum_macros@0.28.0
 	subtle@2.6.1
 	syn@2.0.119
-	syn@3.0.6
+	syn@3.0.9
 	sync_wrapper@1.0.2
 	synstructure@0.14.0
 	sys-locale@0.3.2
@@ -344,18 +344,18 @@ CRATES="
 	tiny-keccak@2.0.2
 	tinystr@0.8.4
 	tinyvec@1.13.3
-	tokio-rustls@0.26.5
-	tokio-util@0.7.19
-	tokio@1.53.1
+	tokio-rustls@0.26.6
+	tokio-util@0.7.20
+	tokio@1.53.3
 	toml@0.8.23
-	toml@1.1.6+spec-1.1.0
+	toml@1.1.8+spec-1.1.0
 	toml_datetime@0.6.11
-	toml_datetime@1.1.1+spec-1.1.0
+	toml_datetime@1.1.2+spec-1.1.0
 	toml_edit@0.22.27
-	toml_edit@0.25.15+spec-1.1.0
-	toml_parser@1.1.3+spec-1.1.0
+	toml_edit@0.25.17+spec-1.1.0
+	toml_parser@1.1.5+spec-1.1.0
 	toml_write@0.1.2
-	toml_writer@1.1.2+spec-1.1.0
+	toml_writer@1.1.3+spec-1.1.0
 	tower-http@0.6.11
 	tower-layer@0.3.3
 	tower-service@0.3.3
@@ -366,16 +366,16 @@ CRATES="
 	tracing-log@0.2.0
 	tracing-subscriber@0.3.23
 	tracing@0.1.44
-	triomphe@0.1.16
+	triomphe@0.1.17
 	try-lock@0.2.5
 	typenum@1.20.1
 	uds_windows@1.2.1
-	unicase@2.9.0
-	unicode-ident@1.0.26
+	unicase@2.10.0
+	unicode-ident@1.0.27
 	unicode-width@0.2.2
 	unit-prefix@0.5.2
 	untrusted@0.9.0
-	ureq-proto@0.6.4
+	ureq-proto@0.6.5
 	ureq@3.4.2
 	url@2.5.8
 	urlencoding@2.1.3
@@ -386,7 +386,7 @@ CRATES="
 	valuable@0.1.1
 	version_check@0.9.5
 	walkdir@2.5.0
-	want@0.3.1
+	want@0.3.2
 	wasi@0.11.1+wasi-snapshot-preview1
 	wasip2@1.0.4+wasi-0.2.12
 	wasm-bindgen-futures@0.4.79
@@ -446,17 +446,17 @@ CRATES="
 	writeable@0.6.4
 	xattr@1.6.1
 	xdg@3.0.0
-	yoke-derive@0.8.3
+	yoke-derive@0.8.4
 	yoke@0.8.3
 	zbus@5.19.0
 	zbus_macros@5.19.0
-	zbus_names@4.3.4
+	zbus_names@4.3.5
 	zcheapstr@1.1.0
-	zerocopy-derive@0.8.59
-	zerocopy@0.8.59
+	zerocopy-derive@0.8.63
+	zerocopy@0.8.63
 	zerofrom-derive@0.1.8
 	zerofrom@0.1.8
-	zeroize@1.9.0
+	zeroize@1.9.1
 	zerotrie@0.2.5
 	zerovec-derive@0.11.6
 	zerovec@0.11.8
@@ -464,9 +464,9 @@ CRATES="
 	zipsign-api@0.1.5
 	zlib-rs@0.6.8
 	zmij@1.0.23
-	zopfli@0.8.3
-	zvariant@5.15.0
-	zvariant_derive@5.15.0
+	zopfli@0.8.4
+	zvariant@5.15.1
+	zvariant_derive@5.15.1
 	zvariant_utils@4.2.0
 "
 
