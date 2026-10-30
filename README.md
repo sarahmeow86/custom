@@ -14,9 +14,7 @@ This overlay provides packages not available in the official Gentoo repository, 
 - **www-client/brave-origin-nightly** - Nightly channel of Brave Origin (~amd64)
 - **app-misc/handy** - Offline speech-to-text dictation app using local whisper.cpp/ONNX models (~amd64)
 - **gui-apps/kwtype** - Virtual keyboard input tool for KDE Plasma Wayland, used by app-misc/handy to type accented characters (~amd64)
-- **dev-python/mkdocs** - Static site generator geared towards project documentation, removed from ::gentoo
-- **dev-python/mkdocs-material** - Material Design theme for MkDocs, removed from ::gentoo (~amd64)
-
+  
 ## Installation
 
 1. Add the overlay using eselect-repository:
