@@ -34,7 +34,7 @@ jobs:
             dev-vcs/git dev-util/pkgcheck app-portage/pycargoebuild dev-util/github-cli \
             dev-lang/rust-bin
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
