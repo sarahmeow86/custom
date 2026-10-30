@@ -10,6 +10,8 @@ This overlay provides packages not available in the official Gentoo repository, 
 - **app-admin/topgrade** - Upgrades everything on the system with a single command
 - **games-util/input-remapper** - Change and program the mapping of input device buttons (fixes a broken shebang present in GURU's ebuild)
 - **www-client/brave-origin** - Standalone Brave web browser without rewards, wallet, AI or other extras
+- **www-client/brave-origin-beta** - Beta channel of Brave Origin (~amd64)
+- **www-client/brave-origin-nightly** - Nightly channel of Brave Origin (~amd64)
 - **app-misc/handy** - Offline speech-to-text dictation app using local whisper.cpp/ONNX models (~amd64)
 - **gui-apps/kwtype** - Virtual keyboard input tool for KDE Plasma Wayland, used by app-misc/handy to type accented characters (~amd64)
 - **dev-python/mkdocs** - Static site generator geared towards project documentation, removed from ::gentoo
@@ -31,6 +33,10 @@ sudo emaint sync -r custom
 ```bash
 sudo emerge --ask media-tv/hypnotix
 ```
+
+## Automatic updates
+
+The `Autobump` workflow (`.github/workflows/autobump.yml`) runs every day and follows each package's upstream, as listed in `.github/autobump/packages.json` (GitHub releases, tags or commits, Brave's release assets, the Linux Mint pool). For every package behind upstream it renames the newest ebuild to the new version, regenerates CRATES for Rust packages with pycargoebuild, updates Manifest and md5-cache, and requires pkgcheck to report nothing new compared with the previous version. Each bump is pushed to master as its own commit; packages marked `"review": true` (app-misc/handy) get a pull request instead, and a failed bump opens an issue. Run it locally with `.github/autobump/autobump.py --check` (report only) or without `--check` to commit the bumps. To add a package, give it an entry in `packages.json`.
 
 ## Notes
 

@@ -1,0 +1,56 @@
+{
+	"www-client/brave-origin": {
+		"type": "brave",
+		"channel": "Release",
+		"arches": ["amd64", "arm64"]
+	},
+	"www-client/brave-origin-beta": {
+		"type": "brave",
+		"channel": "Beta",
+		"arches": ["amd64"]
+	},
+	"www-client/brave-origin-nightly": {
+		"type": "brave",
+		"channel": "Nightly",
+		"arches": ["amd64"]
+	},
+	"app-admin/topgrade": {
+		"type": "github-release",
+		"repo": "topgrade-rs/topgrade",
+		"cargo": {
+			"url": "https://github.com/topgrade-rs/topgrade/archive/refs/tags/v{ver}.tar.gz",
+			"dir": "topgrade-{ver}"
+		}
+	},
+	"app-misc/handy": {
+		"type": "github-release",
+		"repo": "cjpais/Handy",
+		"review": true,
+		"cargo": {
+			"url": "https://github.com/cjpais/Handy/archive/refs/tags/v{ver}.tar.gz",
+			"dir": "Handy-{ver}/src-tauri"
+		}
+	},
+	"dev-python/cinemagoer": {
+		"type": "github-tag",
+		"repo": "cinemagoer/cinemagoer"
+	},
+	"games-util/input-remapper": {
+		"type": "github-release",
+		"repo": "sezanzeb/input-remapper"
+	},
+	"gui-apps/kwtype": {
+		"type": "github-commit",
+		"repo": "Sporif/KWtype"
+	},
+	"media-tv/hypnotix": {
+		"type": "mint",
+		"pool": "h/hypnotix",
+		"pattern": "hypnotix_([0-9.]+)\\.tar\\.xz"
+	},
+	"x11-misc/circle-flags-svg": {
+		"type": "mint",
+		"pool": "c/circle-flags",
+		"pattern": "circle-flags_([0-9.]+)\\+mint1\\.tar\\.xz"
+	}
+}

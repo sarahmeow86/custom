@@ -1,0 +1,49 @@
+name: Autobump
+
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: "category/package to check, space separated (empty = all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: autobump
+  cancel-in-progress: false
+
+jobs:
+  autobump:
+    runs-on: ubuntu-latest
+    container: docker.io/gentoo/stage3:latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      FEATURES: "getbinpkg -sandbox -usersandbox -ipc-sandbox -network-sandbox -pid-sandbox -mount-sandbox"
+    steps:
+      - name: Install tools
+        run: |
+          emerge-webrsync -q
+          emerge --quiet --noreplace --getbinpkg \
+            dev-vcs/git dev-util/pkgcheck app-portage/pycargoebuild dev-util/github-cli
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Bump packages
+        env:
+          PACKAGES: ${{ inputs.packages }}
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /var/cache/distfiles
+          python3 .github/autobump/autobump.py --push \
+            --distdir /var/cache/distfiles $PACKAGES
