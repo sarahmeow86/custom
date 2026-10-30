@@ -41,5 +41,4 @@ The `Autobump` workflow (`.github/workflows/autobump.yml`) runs every day and fo
 - All packages are marked as stable; most target `amd64 x86`, a few (app-admin/topgrade, games-util/input-remapper) are `amd64`-only, and www-client/brave-origin targets `amd64 arm64`
 - Source packages are fetched from packages.linuxmint.com, crates.io, GitHub, and prebuilt `.deb` releases (www-client/brave-origin)
 - app-misc/handy's src_compile reaches the network (RESTRICT="network-sandbox") to run `bun install`/`bun run build` for its JS frontend, since there's no Gentoo vendoring tool for the Bun/npm ecosystem equivalent to pycargoebuild for Rust
-- dev-python/mkdocs and dev-python/mkdocs-material were last-rited and removed from ::gentoo in early 2026 along with several of their dependencies (bug #971358); this overlay also carries the now-orphaned dev-python/ghp-import, dev-python/pyyaml-env-tag, dev-python/mkdocs-get-deps, dev-python/paginate, dev-python/readtime and dev-python/mkdocs-material-extensions to satisfy them (dev-python/mergedeep is still available from ::guru)
 - The overlay uses EAPI=8
