@@ -924,52 +924,58 @@ QA_FLAGS_IGNORED="usr/bin/handy usr/lib/Handy/.*\.so.*"
 src_prepare() {
 	default
 
-	# hf-hub and tauri-nspanel are plain git dependencies pinned via
-	# branch= in Cargo.toml, so Cargo.lock records their source with a
-	# query string (e.g. "git+https://.../hf-hub?branch=...#<sha>") that
-	# doesn't match the bare-URL [patch] entries cargo.eclass generates
-	# from GIT_CRATES. Strip branch= from both files so they agree on a
-	# bare URL (cargo does NOT auto-rewrite a mismatched Cargo.lock git
-	# source just because Cargo.toml changed, confirmed by testing --
-	# both need editing). The exact commit stays pinned via Cargo.lock's
-	# "#<sha>" fragment either way.
-	sed -i \
-		-e 's/, branch = "cancellable-downloads"//' \
-		-e 's/, branch = "v2.1"//' \
-		Cargo.toml || die
-	sed -i \
-		-e 's|hf-hub?branch=cancellable-downloads|hf-hub|' \
-		-e 's|tauri-nspanel?branch=v2.1|tauri-nspanel|' \
-		Cargo.lock || die
+	# Git dependencies pinned with branch=/rev= make Cargo.lock record their
+	# source with a query string (e.g. "git+https://.../hf-hub?branch=...#<sha>")
+	# that doesn't match the bare-URL [patch] entries cargo.eclass generates
+	# from GIT_CRATES. Strip the query from both files so they agree on a bare
+	# URL (cargo does NOT auto-rewrite a mismatched Cargo.lock git source just
+	# because Cargo.toml changed, confirmed by testing -- both need editing).
+	# The exact commit stays pinned via Cargo.lock's "#<sha>" fragment.
+	#
+	# Crates redirected to git by Handy's own [patch.crates-io] (tao and
+	# tao-macros so far) can't be overridden by the config-level [patch]
+	# GIT_CRATES generates: cargo still tries to fetch the git source live and
+	# fails under --offline (confirmed by testing). Point those entries
+	# straight at the vendored directory instead.
+	#
+	# Everything is derived from GIT_CRATES, which pycargoebuild regenerates
+	# on every bump, so no commit hash or branch name is hardcoded here.
+	local name url commit dir git_entry
+	for name in "${!GIT_CRATES[@]}"; do
+		IFS=';' read -r url commit dir <<< "${GIT_CRATES[${name}]}"
+		dir=${dir//%commit%/${commit}}
+		git_entry="${name} = \{ git = \"[^\"]*\"(, (branch\|rev\|tag) = \"[^\"]*\")? \}"
+		sed -i -E \
+			"/^\[patch\.crates-io\]/,/^\[/s|^${git_entry}$|${name} = { path = \"${WORKDIR}/${dir}\" }|" \
+			Cargo.toml || die
+	done
+	sed -i -E 's/(git = "[^"]*"), (branch|rev|tag) = "[^"]*"/\1/' Cargo.toml || die
+	sed -i -E 's/^(source = "git\+[^?"#]*)\?[^#"]*#/\1#/' Cargo.lock || die
 
-	# tao/tao-macros aren't a plain dependency -- Handy's own Cargo.toml
-	# redirects them from crates.io to git via [patch.crates-io]. A
-	# config-level [patch] (what GIT_CRATES normally generates) can't
-	# override a manifest-level [patch.crates-io] redirect: cargo still
-	# tries to fetch the git source live and fails under --offline
-	# (confirmed by testing). Point [patch.crates-io] straight at the
-	# vendored directory instead, bypassing git entirely for these two.
-	sed -i \
-		-e "s|tao = { git = \"https://github.com/cjpais/tao\", rev = \"c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|tao = { path = \"${WORKDIR}/tao-c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|" \
-		-e "s|tao-macros = { git = \"https://github.com/cjpais/tao\", rev = \"c3bee28c1d446d95f08c95c3b6f8d4bde052b876\" }|tao-macros = { path = \"${WORKDIR}/tao-c3bee28c1d446d95f08c95c3b6f8d4bde052b876/tao-macros\" }|" \
-		Cargo.toml || die
-	sed -i \
-		-e 's|tao?rev=c3bee28c1d446d95f08c95c3b6f8d4bde052b876|tao|' \
-		Cargo.lock || die
+	if sed -n '/^\[patch\.crates-io\]/,/^\[/p' Cargo.toml | grep -q 'git = '; then
+		die "[patch.crates-io] has a git entry not covered by GIT_CRATES"
+	fi
+	if grep -qE '^source = "git\+[^"]*\?' Cargo.lock; then
+		die "Cargo.lock still has a git source with a query string"
+	fi
 
 	# ferrous-opencc's build.rs shells out to cbindgen to generate a C
 	# header (opencc.h) that nothing in this build consumes -- cbindgen
 	# in turn runs "cargo metadata" on ferrous-opencc's own Cargo.toml,
 	# which fails against our vendored-only registry (a floating
 	# "anyhow = ^1" requirement resolves against a stray lockfile
-	# instead of the 1.0.102 we actually vendored). Upstream's own Nix
+	# instead of the version we actually vendored). Upstream's own Nix
 	# packaging (flake.nix postPatch) hits the same failure and disables
 	# the cbindgen call the same way; it was removed entirely in
-	# ferrous-opencc 0.3.1+.
-	sed -i \
-		-e 's/\.expect("Unable to generate bindings")/.ok();/' \
-		-e 's/\.write_to_file("opencc\.h");/\/\/ skipped: cbindgen disabled, see comment above/' \
-		"${ECARGO_HOME}/gentoo/ferrous-opencc-0.2.3/build.rs" || die
+	# ferrous-opencc 0.3.1+, hence the check before patching.
+	local build_rs
+	for build_rs in "${ECARGO_HOME}"/gentoo/ferrous-opencc-*/build.rs; do
+		grep -q 'Unable to generate bindings' "${build_rs}" 2>/dev/null || continue
+		sed -i \
+			-e 's/\.expect("Unable to generate bindings")/.ok();/' \
+			-e 's/\.write_to_file("opencc\.h");/\/\/ skipped: cbindgen disabled, see comment above/' \
+			"${build_rs}" || die
+	done
 }
 
 src_compile() {
