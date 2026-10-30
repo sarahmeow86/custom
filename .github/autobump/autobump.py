@@ -5,7 +5,8 @@ Each package in packages.json names where its upstream releases live. For
 every package behind upstream the newest ebuild is renamed to the new
 version (old one dropped), Cargo crates are regenerated when needed, then
 Manifest and md5-cache are updated and pkgcheck must not report anything
-the previous version did not. Every bump is one commit. Packages marked
+the previous version did not. Packages marked "prepare" must also get
+through src_prepare and, for Rust ones, resolve every crate offline. Every bump is one commit. Packages marked
 "review" go to their own branch with a pull request instead of master.
 
   autobump.py --check            only report what is outdated
@@ -159,7 +160,8 @@ def bump(cp, cfg, old, new, extra, distdir):
             raise RuntimeError(f"{var}= not found exactly once in {new_path.name}")
     new_path.write_text(text)
 
-    if cargo := cfg.get("cargo"):
+    cargo = cfg.get("cargo")
+    if cargo:
         with tempfile.TemporaryDirectory() as tmp:
             tarball = Path(tmp) / "src.tar.gz"
             tarball.write_bytes(fetch(cargo["url"].format(ver=new)))
@@ -169,6 +171,17 @@ def bump(cp, cfg, old, new, extra, distdir):
                 Path(tmp) / cargo["dir"].format(ver=new))
 
     run("ebuild", new_path, "manifest", env={"DISTDIR": distdir})
+    if cfg.get("prepare"):
+        run("ebuild", new_path, "clean", "prepare", env={"DISTDIR": distdir})
+        try:
+            if cargo:
+                tmpdir = run("portageq", "envvar", "PORTAGE_TMPDIR", capture=True).strip()
+                work = Path(tmpdir) / "portage" / f"{cp}-{new}" / "work"
+                run("cargo", "metadata", "--offline", "--format-version", "1",
+                    cwd=work / cargo["dir"].format(ver=new),
+                    env={"CARGO_HOME": str(work / "cargo_home")}, capture=True)
+        finally:
+            run("ebuild", new_path, "clean", env={"DISTDIR": distdir})
     if (REPO / "metadata" / "md5-cache").is_dir():
         repo_name = (REPO / "profiles" / "repo_name").read_text().strip()
         gentoo = run("portageq", "get_repo_path", "/", "gentoo", capture=True).strip()
@@ -176,7 +189,7 @@ def bump(cp, cfg, old, new, extra, distdir):
                       f"[{repo_name}]\nlocation = {REPO}\nmasters = gentoo\n")
         old_cache = REPO / "metadata" / "md5-cache" / cp.split("/")[0] / f"{pn}-{old}"
         if old_cache.exists():
-            run("git", "rm", "-q", old_cache)
+            run("git", "rm", "-qf", old_cache)
         with tempfile.TemporaryDirectory() as cache_dir:
             run("egencache", "--update", "--repo", repo_name, "--cache-dir", cache_dir,
                 "--repositories-configuration", repos_conf, cp)
@@ -186,7 +199,7 @@ def bump(cp, cfg, old, new, extra, distdir):
         out = run("pkgcheck", "scan", cp, capture=True, check=False)
         raise RuntimeError(f"pkgcheck reports new problems: {', '.join(sorted(new_problems))}\n{out}")
 
-    run("git", "add", "-A", cp, "metadata")
+    run("git", "add", "-A", cp, f":(glob)metadata/md5-cache/{cp}-[0-9]*")
     run("git", "commit", "-q", "-m", f"{cp}: add {new}, drop {old}")
 
 

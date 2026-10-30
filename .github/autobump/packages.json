@@ -25,7 +25,7 @@
 	"app-misc/handy": {
 		"type": "github-release",
 		"repo": "cjpais/Handy",
-		"review": true,
+		"prepare": true,
 		"cargo": {
 			"url": "https://github.com/cjpais/Handy/archive/refs/tags/v{ver}.tar.gz",
 			"dir": "Handy-{ver}/src-tauri"

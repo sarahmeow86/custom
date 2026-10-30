@@ -31,7 +31,8 @@ jobs:
         run: |
           emerge-webrsync -q
           emerge --quiet --noreplace --getbinpkg \
-            dev-vcs/git dev-util/pkgcheck app-portage/pycargoebuild dev-util/github-cli
+            dev-vcs/git dev-util/pkgcheck app-portage/pycargoebuild dev-util/github-cli \
+            dev-lang/rust-bin
 
       - uses: actions/checkout@v4
         with:

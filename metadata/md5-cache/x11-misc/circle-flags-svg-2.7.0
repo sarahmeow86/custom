@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Collection of circular SVG country and language flags
+EAPI=8
+HOMEPAGE=https://github.com/linuxmint/circle-flags
+KEYWORDS=amd64
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=http://packages.linuxmint.com/pool/main/c/circle-flags/circle-flags_2.7.0+mint1.tar.xz
+_md5_=24f40df3a341aec6aba4045bb3db7da7
