@@ -10,7 +10,7 @@ CRATES="
 	ahash@0.8.12
 	aho-corasick@1.1.5
 	android_system_properties@0.1.6
-	annotate-snippets@0.12.16
+	annotate-snippets@0.12.17
 	anstream@1.0.0
 	anstyle-parse@1.0.0
 	anstyle-query@1.1.5
@@ -47,7 +47,7 @@ CRATES="
 	bumpalo@3.20.3
 	byteorder@1.5.0
 	bytes@1.12.1
-	cc@1.8.0
+	cc@1.9.0
 	cfg-if@1.0.5
 	cfg_aliases@0.2.2
 	chacha20@0.10.2
@@ -77,7 +77,7 @@ CRATES="
 	core_detect@1.0.0
 	cpufeatures@0.2.17
 	cpufeatures@0.3.1
-	crc32fast@1.5.2
+	crc32fast@1.5.3
 	crossbeam-deque@0.8.8
 	crossbeam-epoch@0.9.21
 	crossbeam-utils@0.8.23
@@ -118,11 +118,11 @@ CRATES="
 	fiat-crypto@0.2.9
 	filedescriptor@0.8.3
 	filetime@0.2.29
-	find-msvc-tools@0.1.14
+	find-msvc-tools@0.1.15
 	flate2@1.1.10
 	fnv@1.0.7
 	form_urlencoded@1.2.2
-	freedesktop-desktop-entry@0.8.3
+	freedesktop-desktop-entry@0.8.4
 	fs_extra@1.3.0
 	futures-channel@0.3.34
 	futures-core@0.3.34
@@ -279,7 +279,7 @@ CRATES="
 	rustls-pki-types@1.15.1
 	rustls-platform-verifier-android@0.2.0
 	rustls-platform-verifier@0.7.1
-	rustls-webpki@0.103.15
+	rustls-webpki@0.103.16
 	rustls@0.23.46
 	rustversion@1.0.23
 	same-file@1.0.6
@@ -346,7 +346,7 @@ CRATES="
 	tinyvec@1.13.3
 	tokio-rustls@0.26.6
 	tokio-util@0.7.20
-	tokio@1.53.3
+	tokio@1.54.0
 	toml@0.8.23
 	toml@1.1.8+spec-1.1.0
 	toml_datetime@0.6.11
@@ -396,8 +396,8 @@ CRATES="
 	wasm-bindgen@0.2.129
 	web-sys@0.3.106
 	web-time@1.1.0
-	webpki-root-certs@1.0.9
-	webpki-roots@1.0.9
+	webpki-root-certs@1.0.10
+	webpki-roots@1.0.10
 	which@4.4.2
 	which@8.0.6
 	widestring@0.4.3
