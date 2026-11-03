@@ -14,8 +14,8 @@ CRATES="
 	alloc-no-stdlib@2.0.4
 	alloc-stdlib@0.2.2
 	allocator-api2@0.2.21
-	alsa-sys@0.3.1
-	alsa@0.9.1
+	alsa-sys@0.4.0
+	alsa@0.11.0
 	android_log-sys@0.3.2
 	android_logger@0.15.1
 	android_system_properties@0.1.5
@@ -42,6 +42,10 @@ CRATES="
 	atk-sys@0.18.2
 	atk@0.18.2
 	atomic-waker@1.1.2
+	audio-codec-algorithms@0.8.1
+	audioadapter-buffers@5.2.0
+	audioadapter-sample@5.2.0
+	audioadapter@5.0.0
 	auto-launch@0.5.0
 	autocfg@1.5.0
 	base64@0.21.7
@@ -110,8 +114,8 @@ CRATES="
 	core-graphics-types@0.2.0
 	core-graphics@0.22.3
 	core-graphics@0.25.0
-	coreaudio-rs@0.13.0
-	cpal@0.16.0
+	coreaudio-rs@0.14.2
+	cpal@0.18.2
 	cpufeatures@0.2.17
 	crc32fast@1.5.0
 	crossbeam-channel@0.5.15
@@ -123,20 +127,14 @@ CRATES="
 	cssparser@0.36.0
 	ctor-proc-macro@0.0.7
 	ctor@0.8.0
-	darling@0.20.11
 	darling@0.21.3
-	darling_core@0.20.11
 	darling_core@0.21.3
-	darling_macro@0.20.11
 	darling_macro@0.21.3
 	dasp_sample@0.11.0
 	dbus@0.9.12
 	der@0.7.10
 	deranged@0.5.7
 	derive_arbitrary@1.4.2
-	derive_builder@0.20.2
-	derive_builder_core@0.20.2
-	derive_builder_macro@0.20.2
 	derive_more-impl@2.1.1
 	derive_more@0.99.20
 	derive_more@2.1.1
@@ -169,10 +167,10 @@ CRATES="
 	enigo@0.6.1
 	enum-map-derive@0.17.0
 	enum-map@2.7.3
+	enum-primitive-derive@0.3.0
 	enumflags2@0.7.12
 	enumflags2_derive@0.7.12
 	env_filter@0.1.4
-	env_logger@0.10.2
 	epoll@4.4.0
 	equivalent@1.0.2
 	erased-serde@0.4.9
@@ -182,7 +180,6 @@ CRATES="
 	event-listener-strategy@0.5.4
 	event-listener@5.4.1
 	extended@0.1.0
-	eyre@0.6.12
 	fallible-iterator@0.3.0
 	fallible-streaming-iterator@0.1.9
 	fastrand@2.3.0
@@ -248,7 +245,9 @@ CRATES="
 	gtk@0.18.2
 	h2@0.4.13
 	half@2.7.1
+	handy-cpal@0.18.2
 	handy-keys@0.3.4
+	handy-recorder@0.1.0
 	hashbrown@0.12.3
 	hashbrown@0.14.5
 	hashbrown@0.15.5
@@ -258,7 +257,6 @@ CRATES="
 	heck@0.5.0
 	hermit-abi@0.5.2
 	hex@0.4.3
-	hmac-sha256@1.1.14
 	hound@3.5.1
 	html5ever@0.29.1
 	html5ever@0.38.0
@@ -267,7 +265,6 @@ CRATES="
 	http-range@0.1.5
 	http@1.4.0
 	httparse@1.10.1
-	humantime@2.3.0
 	hyper-rustls@0.27.7
 	hyper-tls@0.6.0
 	hyper-util@0.1.20
@@ -287,7 +284,6 @@ CRATES="
 	idna@1.1.0
 	idna_adapter@1.2.1
 	image@0.25.9
-	indenter@0.3.4
 	indexmap@1.9.3
 	indexmap@2.13.0
 	indicatif@0.18.4
@@ -297,15 +293,18 @@ CRATES="
 	ipnet@2.11.0
 	iri-string@0.7.10
 	is-docker@0.2.0
-	is-terminal@0.4.17
 	is-wsl@0.4.0
 	is_terminal_polyfill@1.70.2
 	isolang@2.4.0
 	itoa@1.0.17
 	javascriptcore-rs-sys@1.1.1
 	javascriptcore-rs@1.1.2
+	jni-macros@0.22.4
+	jni-sys-macros@0.4.1
 	jni-sys@0.3.0
+	jni-sys@0.4.1
 	jni@0.21.1
+	jni@0.22.4
 	js-sys@0.3.87
 	json-patch@3.0.1
 	jsonptr@0.6.3
@@ -326,16 +325,14 @@ CRATES="
 	litrs@1.0.0
 	lock_api@0.4.14
 	log@0.4.29
-	lzma-rust2@0.15.7
 	mac@0.1.1
-	mach2@0.4.3
+	mach2@0.6.0
 	macos-accessibility-client@0.0.1
 	malloc_buf@0.0.6
 	markup5ever@0.14.1
 	markup5ever@0.38.0
 	match_token@0.1.0
 	matches@0.1.10
-	matrixmultiply@0.3.10
 	memchr@2.8.0
 	memmap2@0.9.10
 	memoffset@0.9.1
@@ -349,7 +346,6 @@ CRATES="
 	muda@0.19.3
 	native-tls@0.2.18
 	natural@0.5.0
-	ndarray@0.17.2
 	ndk-context@0.1.1
 	ndk-sys@0.6.0+11769913
 	ndk@0.9.0
@@ -372,6 +368,8 @@ CRATES="
 	num_threads@0.1.7
 	objc2-app-kit@0.3.2
 	objc2-audio-toolbox@0.3.2
+	objc2-av-foundation@0.3.2
+	objc2-avf-audio@0.3.2
 	objc2-cloud-kit@0.3.2
 	objc2-core-audio-types@0.3.2
 	objc2-core-audio@0.3.2
@@ -406,8 +404,6 @@ CRATES="
 	openssl@0.10.75
 	option-ext@0.2.0
 	ordered-stream@0.2.0
-	ort-sys@2.0.0-rc.12
-	ort@2.0.0-rc.12
 	os_info@3.14.0
 	os_pipe@1.2.3
 	osakit@0.3.1
@@ -447,7 +443,6 @@ CRATES="
 	png@0.17.16
 	png@0.18.1
 	polling@3.11.0
-	portable-atomic-util@0.2.5
 	portable-atomic@1.13.1
 	potential_utf@0.1.4
 	powerfmt@0.2.0
@@ -464,6 +459,7 @@ CRATES="
 	proc-macro2@1.0.106
 	ptr_meta@0.1.4
 	ptr_meta_derive@0.1.4
+	pulseaudio@0.3.1
 	pxfm@0.1.27
 	quick-error@2.0.1
 	quick-xml@0.38.4
@@ -482,7 +478,6 @@ CRATES="
 	rand_hc@0.2.0
 	rand_pcg@0.2.1
 	raw-window-handle@0.6.2
-	rawpointer@0.2.1
 	realfft@3.5.0
 	redox_syscall@0.5.18
 	redox_syscall@0.7.1
@@ -498,11 +493,11 @@ CRATES="
 	reqwest@0.13.2
 	rfd@0.16.0
 	ring@0.17.14
-	ringbuffer@0.15.0
 	rkyv@0.7.46
 	rkyv_derive@0.7.46
+	rodio@0.23.0
 	rtrb@0.4.0
-	rubato@0.16.2
+	rubato@5.0.0
 	rusqlite@0.37.0
 	rusqlite_migration@2.3.0
 	rust-stemmers@1.2.0
@@ -553,6 +548,7 @@ CRATES="
 	signal-hook-registry@1.4.8
 	signal-hook@0.3.18
 	simd-adler32@0.3.8
+	simd_cesu8@1.2.0
 	simdutf8@0.1.5
 	siphasher@0.3.11
 	siphasher@1.0.2
@@ -581,10 +577,13 @@ CRATES="
 	symphonia-bundle-flac@0.5.5
 	symphonia-bundle-mp3@0.5.5
 	symphonia-codec-aac@0.5.5
+	symphonia-codec-adpcm@0.5.5
+	symphonia-codec-alac@0.5.5
 	symphonia-codec-pcm@0.5.5
 	symphonia-codec-vorbis@0.5.5
 	symphonia-core@0.5.5
 	symphonia-format-isomp4@0.5.5
+	symphonia-format-mkv@0.5.5
 	symphonia-format-ogg@0.5.5
 	symphonia-format-riff@0.5.5
 	symphonia-metadata@0.5.5
@@ -630,7 +629,6 @@ CRATES="
 	tempfile@3.25.0
 	tendril@0.4.3
 	tendril@0.5.1
-	termcolor@1.4.1
 	thiserror-impl@1.0.69
 	thiserror-impl@2.0.18
 	thiserror@1.0.69
@@ -663,9 +661,8 @@ CRATES="
 	tracing-attributes@0.1.31
 	tracing-core@0.1.36
 	tracing@0.1.44
-	transcribe-cpp-sys@0.2.4
-	transcribe-cpp@0.2.4
-	transcribe-rs@0.3.8
+	transcribe-cpp-sys@0.4.0
+	transcribe-cpp@0.4.0
 	transpose@0.2.3
 	tray-icon@0.24.1
 	tree_magic_mini@3.2.2
@@ -699,6 +696,7 @@ CRATES="
 	version-compare@0.2.1
 	version_check@0.9.5
 	virtue@0.0.18
+	visibility@0.1.1
 	vswhom-sys@0.1.3
 	vswhom@0.1.0
 	walkdir@2.5.0
@@ -744,11 +742,14 @@ CRATES="
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
 	window-vibrancy@0.6.0
+	windowfunctions@0.1.1
 	windows-collections@0.2.0
-	windows-core@0.54.0
+	windows-collections@0.3.2
 	windows-core@0.58.0
 	windows-core@0.61.2
+	windows-core@0.62.2
 	windows-future@0.2.1
+	windows-future@0.3.2
 	windows-implement@0.58.0
 	windows-implement@0.60.2
 	windows-interface@0.58.0
@@ -756,8 +757,8 @@ CRATES="
 	windows-link@0.1.3
 	windows-link@0.2.1
 	windows-numerics@0.2.0
+	windows-numerics@0.3.1
 	windows-registry@0.6.1
-	windows-result@0.1.2
 	windows-result@0.2.0
 	windows-result@0.3.4
 	windows-result@0.4.1
@@ -775,10 +776,11 @@ CRATES="
 	windows-targets@0.52.6
 	windows-targets@0.53.5
 	windows-threading@0.1.0
+	windows-threading@0.2.1
 	windows-version@0.1.7
-	windows@0.54.0
 	windows@0.58.0
 	windows@0.61.3
+	windows@0.62.2
 	windows_aarch64_gnullvm@0.42.2
 	windows_aarch64_gnullvm@0.48.5
 	windows_aarch64_gnullvm@0.52.6
@@ -855,11 +857,9 @@ CRATES="
 declare -A GIT_CRATES=(
 	[hf-hub]='https://github.com/cjpais/hf-hub;9918f11ab3473135eb7865aa4a5d79d597e6e810;hf-hub-%commit%'
 	[rdev]='https://github.com/rustdesk-org/rdev;a90dbe1172f8832f54c97c62e823c5a34af5fdfe;rdev-%commit%'
-	[rodio]='https://github.com/cjpais/rodio;fed30292db417cb95305c118c0e1d804fb74cbff;rodio-%commit%'
 	[tao-macros]='https://github.com/cjpais/tao;c3bee28c1d446d95f08c95c3b6f8d4bde052b876;tao-%commit%/tao-macros'
 	[tao]='https://github.com/cjpais/tao;c3bee28c1d446d95f08c95c3b6f8d4bde052b876;tao-%commit%'
 	[tauri-nspanel]='https://github.com/ahkohd/tauri-nspanel;da9c9a8d4eb7f0524a2508988df1a7d9585b4904;tauri-nspanel-%commit%'
-	[vad-rs]='https://github.com/cjpais/vad-rs;2a412ed858695b9251f3f5a1a20d95b59fa7c498;vad-rs-%commit%'
 )
 
 inherit cargo desktop udev xdg
