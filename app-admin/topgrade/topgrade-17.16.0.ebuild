@@ -16,13 +16,13 @@ CRATES="
 	anstyle-query@1.1.5
 	anstyle-wincon@3.0.11
 	anstyle@1.0.14
-	arc-swap@1.9.3
+	arc-swap@1.9.4
 	arraydeque@0.5.1
 	async-broadcast@0.7.2
 	async-channel@2.5.0
-	async-executor@1.14.0
+	async-executor@1.14.1
 	async-io@2.6.0
-	async-lock@3.4.2
+	async-lock@3.5.0
 	async-process@2.5.0
 	async-recursion@1.2.0
 	async-signal@0.2.14
@@ -46,7 +46,7 @@ CRATES="
 	bumpalo@3.20.3
 	byteorder@1.5.0
 	bytes@1.12.1
-	cc@1.10.0
+	cc@1.11.1
 	cfg-if@1.0.5
 	cfg_aliases@0.2.2
 	chacha20@0.10.2
@@ -68,6 +68,7 @@ CRATES="
 	const-oid@0.9.6
 	const-random-macro@0.1.16
 	const-random@0.1.18
+	constant_time_eq@0.6.1
 	cookie@0.18.2
 	cookie_store@0.22.1
 	core-foundation-sys@0.8.7
@@ -117,7 +118,7 @@ CRATES="
 	filedescriptor@0.8.3
 	filetime@0.2.29
 	find-msvc-tools@0.1.15
-	flate2@1.1.10
+	flate2@1.1.11
 	fnv@1.0.7
 	form_urlencoded@1.2.2
 	freedesktop-desktop-entry@0.8.4
@@ -175,7 +176,7 @@ CRATES="
 	is_terminal_polyfill@1.70.2
 	itertools@0.11.0
 	itertools@0.15.0
-	itoa@1.0.18
+	itoa@1.0.19
 	jetbrains-toolbox-updater@6.0.1
 	jni-macros@0.22.4
 	jni-sys-macros@0.4.1
@@ -201,7 +202,7 @@ CRATES="
 	memoffset@0.9.1
 	merge2@0.3.2
 	merge2_derive@0.3.1
-	mime@0.3.17
+	mime@0.3.18
 	miniz_oxide@0.9.1
 	mio@1.2.4
 	multiversion_no_op@1.0.0
@@ -293,7 +294,7 @@ CRATES="
 	serde_json@1.0.154
 	serde_repr@0.1.21
 	serde_spanned@0.6.9
-	serde_spanned@1.1.2
+	serde_spanned@1.1.3
 	sha2@0.10.9
 	sharded-slab@0.1.7
 	shell-words@1.1.1
@@ -343,14 +344,14 @@ CRATES="
 	tokio-util@0.7.20
 	tokio@1.54.1
 	toml@0.8.23
-	toml@1.1.8+spec-1.1.0
+	toml@1.2.1+spec-1.1.0
 	toml_datetime@0.6.11
-	toml_datetime@1.1.2+spec-1.1.0
+	toml_datetime@1.1.3+spec-1.1.0
 	toml_edit@0.22.27
-	toml_edit@0.25.17+spec-1.1.0
+	toml_edit@0.25.19+spec-1.1.0
 	toml_parser@1.1.5+spec-1.1.0
 	toml_write@0.1.2
-	toml_writer@1.1.3+spec-1.1.0
+	toml_writer@1.2.0+spec-1.1.0
 	tower-http@0.6.11
 	tower-layer@0.3.3
 	tower-service@0.3.3
@@ -371,8 +372,8 @@ CRATES="
 	unicode-width@0.2.3
 	unit-prefix@0.5.2
 	untrusted@0.9.0
-	ureq-proto@0.6.5
-	ureq@3.5.0
+	ureq-proto@0.7.1
+	ureq@3.5.1
 	url@2.5.8
 	urlencoding@2.1.3
 	utf8-zero@0.8.1
@@ -438,7 +439,7 @@ CRATES="
 	windows_x86_64_gnullvm@0.52.6
 	windows_x86_64_msvc@0.52.6
 	winnow@0.7.15
-	winnow@1.0.4
+	winnow@1.0.5
 	wit-bindgen@0.57.1
 	writeable@0.6.4
 	xattr@1.7.0
@@ -454,10 +455,11 @@ CRATES="
 	zerofrom-derive@0.1.8
 	zerofrom@0.1.8
 	zeroize@1.9.1
+	zeroize_derive@1.5.0
 	zerotrie@0.2.5
 	zerovec-derive@0.11.7
 	zerovec@0.11.9
-	zip@9.3.0
+	zip@9.5.0
 	zipsign-api@0.2.2
 	zlib-rs@0.6.8
 	zmij@1.0.23
