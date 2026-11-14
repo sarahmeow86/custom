@@ -40,6 +40,12 @@ BDEPEND="${PYTHON_DEPS}"
 src_prepare() {
     default
 
+    # 5.8 dropped the WAYLAND_DISPLAY reset: libmpv then picks its Wayland
+    # backend, ignores --wid and opens a separate window on Wayland sessions.
+    sed -i 's/^os.environ\["GDK_BACKEND"\] = "x11"$/&\nos.environ.pop("WAYLAND_DISPLAY", None)/' \
+        "usr/lib/hypnotix/hypnotix.py" || die
+    grep -q 'os.environ.pop("WAYLAND_DISPLAY", None)' "usr/lib/hypnotix/hypnotix.py" || die "WAYLAND_DISPLAY sed failed"
+
     # Set version in About dialog
     sed -i "s/__DEB_VERSION__/${PV}/g" "usr/lib/hypnotix/hypnotix.py"
 
