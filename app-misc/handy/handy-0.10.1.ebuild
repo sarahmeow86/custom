@@ -246,8 +246,8 @@ CRATES="
 	h2@0.4.13
 	half@2.7.1
 	handy-cpal@0.18.2
-	handy-keys@0.3.4
-	handy-recorder@0.1.0
+	handy-keys@0.3.5
+	handy-recorder@0.1.1
 	hashbrown@0.12.3
 	hashbrown@0.14.5
 	hashbrown@0.15.5
@@ -400,9 +400,10 @@ CRATES="
 	open@5.3.3
 	openssl-macros@0.1.1
 	openssl-probe@0.2.1
-	openssl-sys@0.9.111
-	openssl@0.10.75
+	openssl-sys@0.9.118
+	openssl@0.10.82
 	option-ext@0.2.0
+	opusic-sys@0.7.7
 	ordered-stream@0.2.0
 	os_info@3.14.0
 	os_pipe@1.2.3
@@ -510,8 +511,8 @@ CRATES="
 	rustls-pki-types@1.14.0
 	rustls-platform-verifier-android@0.1.1
 	rustls-platform-verifier@0.6.2
-	rustls-webpki@0.103.9
-	rustls@0.23.36
+	rustls-webpki@0.103.16
+	rustls@0.23.46
 	rustversion@1.0.22
 	ryu@1.0.23
 	same-file@1.0.6
@@ -574,6 +575,7 @@ CRATES="
 	strum_macros@0.24.3
 	subtle@2.6.1
 	swift-rs@1.0.7
+	symphonia-adapter-libopus@0.2.9
 	symphonia-bundle-flac@0.5.5
 	symphonia-bundle-mp3@0.5.5
 	symphonia-codec-aac@0.5.5
@@ -661,8 +663,8 @@ CRATES="
 	tracing-attributes@0.1.31
 	tracing-core@0.1.36
 	tracing@0.1.44
-	transcribe-cpp-sys@0.4.0
-	transcribe-cpp@0.4.0
+	transcribe-cpp-sys@0.4.2
+	transcribe-cpp@0.4.2
 	transpose@0.2.3
 	tray-icon@0.24.1
 	tree_magic_mini@3.2.2
@@ -855,7 +857,7 @@ CRATES="
 "
 
 declare -A GIT_CRATES=(
-	[hf-hub]='https://github.com/cjpais/hf-hub;9918f11ab3473135eb7865aa4a5d79d597e6e810;hf-hub-%commit%'
+	[hf-hub]='https://github.com/cjpais/hf-hub;fc273554a88ce5f5372c84386a9adf535ba71a1c;hf-hub-%commit%'
 	[rdev]='https://github.com/rustdesk-org/rdev;a90dbe1172f8832f54c97c62e823c5a34af5fdfe;rdev-%commit%'
 	[tao-macros]='https://github.com/cjpais/tao;c3bee28c1d446d95f08c95c3b6f8d4bde052b876;tao-%commit%/tao-macros'
 	[tao]='https://github.com/cjpais/tao;c3bee28c1d446d95f08c95c3b6f8d4bde052b876;tao-%commit%'
