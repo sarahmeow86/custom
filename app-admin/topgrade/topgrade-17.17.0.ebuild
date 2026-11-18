@@ -10,13 +10,13 @@ CRATES="
 	ahash@0.8.12
 	aho-corasick@1.1.5
 	android_system_properties@0.1.6
-	annotate-snippets@0.12.17
+	annotate-snippets@0.12.18
 	anstream@1.0.0
 	anstyle-parse@1.0.0
 	anstyle-query@1.1.5
 	anstyle-wincon@3.0.11
 	anstyle@1.0.14
-	arc-swap@1.9.4
+	arc-swap@1.9.5
 	arraydeque@0.5.1
 	async-broadcast@0.7.2
 	async-channel@2.5.0
@@ -43,15 +43,15 @@ CRATES="
 	block2@0.6.2
 	blocking@1.7.0
 	bstr@1.13.1
-	bumpalo@3.20.3
+	bumpalo@3.20.4
 	byteorder@1.5.0
 	bytes@1.12.1
-	cc@1.11.1
+	cc@1.11.2
 	cfg-if@1.0.5
 	cfg_aliases@0.2.2
 	chacha20@0.10.2
 	chrono@0.4.45
-	clap-cargo@0.19.0
+	clap-cargo@0.19.1
 	clap@4.6.7
 	clap_builder@4.6.7
 	clap_complete@4.6.11
@@ -77,7 +77,7 @@ CRATES="
 	core_detect@1.0.0
 	cpufeatures@0.2.17
 	cpufeatures@0.3.1
-	crc32fast@1.5.4
+	crc32fast@1.5.5
 	crossbeam-deque@0.8.8
 	crossbeam-epoch@0.9.21
 	crossbeam-utils@0.8.23
@@ -108,7 +108,7 @@ CRATES="
 	enumflags2@0.7.12
 	enumflags2_derive@0.7.12
 	equivalent@1.0.3
-	errno@0.3.14
+	errno@0.3.15
 	etcetera@0.11.0
 	event-listener-strategy@0.5.4
 	event-listener@5.4.2
@@ -204,9 +204,9 @@ CRATES="
 	merge2_derive@0.3.1
 	mime@0.3.18
 	miniz_oxide@0.9.1
-	mio@1.2.4
+	mio@1.2.5
 	multiversion_no_op@1.0.0
-	nix@0.31.3
+	nix@0.32.0
 	nohash-hasher@0.2.0
 	normpath@1.5.2
 	notify-rust@4.17.0
@@ -250,7 +250,7 @@ CRATES="
 	quote@1.0.47
 	r-efi@5.3.0
 	r-efi@6.0.0
-	rand@0.10.3
+	rand@0.10.4
 	rand_core@0.10.1
 	rand_core@0.6.4
 	rand_pcg@0.10.2
@@ -273,10 +273,10 @@ CRATES="
 	rustix@0.38.44
 	rustix@1.1.6
 	rustls-native-certs@0.8.5
-	rustls-pki-types@1.15.1
+	rustls-pki-types@1.16.0
 	rustls-platform-verifier-android@0.2.0
 	rustls-platform-verifier@0.7.1
-	rustls-webpki@0.103.16
+	rustls-webpki@0.103.17
 	rustls@0.23.46
 	rustversion@1.0.23
 	same-file@1.0.6
@@ -318,7 +318,7 @@ CRATES="
 	strum_macros@0.28.0
 	subtle@2.6.1
 	syn@2.0.119
-	syn@3.0.9
+	syn@3.0.10
 	sync_wrapper@1.0.2
 	synstructure@0.14.0
 	sys-locale@0.3.2
@@ -373,7 +373,7 @@ CRATES="
 	unit-prefix@0.5.2
 	untrusted@0.9.0
 	ureq-proto@0.7.1
-	ureq@3.5.1
+	ureq@3.5.2
 	url@2.5.8
 	urlencoding@2.1.3
 	utf8-zero@0.8.1
@@ -394,8 +394,8 @@ CRATES="
 	wasm-bindgen@0.2.130
 	web-sys@0.3.107
 	web-time@1.1.0
-	webpki-root-certs@1.0.11
-	webpki-roots@1.0.11
+	webpki-root-certs@1.0.12
+	webpki-roots@1.0.12
 	which@4.4.2
 	which@8.0.6
 	widestring@0.4.3
@@ -459,7 +459,7 @@ CRATES="
 	zerotrie@0.2.5
 	zerovec-derive@0.11.7
 	zerovec@0.11.9
-	zip@9.5.0
+	zip@9.6.0
 	zipsign-api@0.2.2
 	zlib-rs@0.6.8
 	zmij@1.0.23
