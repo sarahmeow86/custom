@@ -1,4 +1,4 @@
-# Custom Gentoo Overlay
+# sarahmeow86 Gentoo overlay
 
 This overlay provides packages not available in the official Gentoo repository, mostly software from Linux Mint plus a few other tools.
 
@@ -14,17 +14,20 @@ This overlay provides packages not available in the official Gentoo repository, 
 - **www-client/brave-origin-nightly** - Nightly channel of Brave Origin (~amd64)
 - **app-misc/handy** - Offline speech-to-text dictation app using local whisper.cpp/ONNX models (~amd64)
 - **gui-apps/kwtype** - Virtual keyboard input tool for KDE Plasma Wayland, used by app-misc/handy to type accented characters (~amd64)
+- **sec-keys/openpgp-keys-brave-browser-release** - Brave's release signing keys, used by verify-sig in the Brave Origin ebuilds
   
 ## Installation
 
+app-misc/handy also needs [GURU](https://wiki.gentoo.org/wiki/Project:GURU) (dev-lang/bun-bin, sci-libs/onnxruntime): `sudo eselect repository enable guru`.
+
 1. Add the overlay using eselect-repository:
 ```bash
-sudo eselect repository add custom git https://github.com/sarahmeow86/custom.git
+sudo eselect repository add sarahmeow86 git https://github.com/sarahmeow86/custom.git
 ```
 
 2. Sync the overlay:
 ```bash
-sudo emaint sync -r custom
+sudo emaint sync -r sarahmeow86
 ```
 
 3. Install packages:
@@ -42,3 +45,14 @@ The `Autobump` workflow (`.github/workflows/autobump.yml`) runs every day and fo
 - Source packages are fetched from packages.linuxmint.com, crates.io, GitHub, and prebuilt `.deb` releases (www-client/brave-origin)
 - app-misc/handy's src_compile reaches the network (RESTRICT="network-sandbox") to run `bun install`/`bun run build` for its JS frontend, since there's no Gentoo vendoring tool for the Bun/npm ecosystem equivalent to pycargoebuild for Rust
 - The overlay uses EAPI=8
+
+## Credits
+
+The Brave ebuilds (www-client/brave-origin, -beta, -nightly) and eclass/brave.eclass, together with
+sec-keys/openpgp-keys-brave-browser-release, are based on [another-brave-overlay](https://github.com/falbrechtskirchinger/another-brave-overlay)
+by falbrechtskirchinger, pointed at the Brave Origin releases. Once Brave Origin lands
+there, that overlay is the reference one.
+
+## License
+
+Ebuilds and eclasses are distributed under the GNU General Public License v2, see `LICENSE`.
