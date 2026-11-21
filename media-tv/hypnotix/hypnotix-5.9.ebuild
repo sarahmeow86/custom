@@ -1,4 +1,6 @@
 # Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
 EAPI=8
 
 PYTHON_COMPAT=( python3_{11..14} )
@@ -10,7 +12,7 @@ HOMEPAGE="https://github.com/linuxmint/hypnotix"
 SRC_URI="http://packages.linuxmint.com/pool/main/h/hypnotix/hypnotix_${PV}.tar.xz -> ${P}.tar.xz"
 S="${WORKDIR}/hypnotix"
 
-LICENSE="GPL-3.0-or-later"
+LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
