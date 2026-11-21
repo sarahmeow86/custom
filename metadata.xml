@@ -12,6 +12,6 @@
     </masters>
 
     <description>
-        Local overlay for custom ebuilds: hypnotix, circle-flags-svg, and dependencies.
+        Linux Mint apps (hypnotix), Brave Origin, handy, input-remapper and other tools not in the Gentoo tree.
     </description>
 </metadata>
